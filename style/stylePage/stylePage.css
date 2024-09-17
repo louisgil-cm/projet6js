@@ -1,0 +1,68 @@
+html {
+  font-family: "Roboto", sans-serif;
+}
+html body header .header__logo {
+  height: 100px;
+  width: 200px;
+}
+html body main article {
+  display: flex;
+  justify-content: space-between;
+  background-color: #fafafa;
+}
+html body main article header .title__section h2 {
+  color: #d3573c;
+}
+html body main article header .title__section p {
+  color: #901c1c;
+}
+html body main article header .slogan__section .divSection ul {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  margin-left: -40px;
+}
+html body main article header .slogan__section .divSection ul li {
+  border: 2px solid #f2f2f2;
+  border-radius: 15px;
+  color: #901c1c;
+  padding: 5px;
+}
+html body main article button {
+  height: 50px;
+  position: absolute;
+  top: 22%;
+  left: 30%;
+  border-radius: 10px;
+  background-color: #901c1c;
+  border: none;
+}
+html body main article figure {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  background-color: red;
+}
+html body main article figure img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 0%;
+}
+html body .image {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+html body .image div {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1 1 calc(30.33% - 20px);
+  height: 30vh;
+  background-color: red;
+}
+html body .image img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 0%;
+  height: 100%;
+}/*# sourceMappingURL=stylePage.css.map */

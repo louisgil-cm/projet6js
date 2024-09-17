@@ -1,0 +1,100 @@
+html{
+    font-family: 'Roboto', sans-serif;
+    a{
+        text-decoration: none;
+    }
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      
+        header{
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            
+            .header__logo{
+                height:100px;
+                width: 200px;
+            }
+            .header__bannerTag{
+                display: flex;
+                list-style:none ;
+                margin-right: 25px;
+                gap: 10px;
+                flex-wrap: wrap;
+                li{
+                    border: 2px solid #f2f2f2;
+                    border-radius: 15px;
+                    font-size: 1.2rem;
+                    padding: 2px;
+                    color: #901c1c;
+                    padding: 5px;
+                }
+            }
+            .header__title{
+                color: #901c1c;
+            }
+        }
+        main{
+            display: flex;
+            flex-wrap: wrap;
+            a{
+                flex: 1 1 calc(30.33% - 20px); 
+                article{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 10px; 
+                    text-align: center;
+                    padding: 20px;
+                    header{
+                        display: flex;
+                        flex-direction: column;
+                        h2{
+                            color: #d3573c;
+                        }
+                        p{
+                            color: #901c1c;
+                            font-weight: bold;
+                        }
+                    }
+                    figure{
+                        background-color: yellow;
+                        height: 200px;
+                        width: 200px;
+                        border-radius: 50%;
+                        img{
+                            object-fit: cover;
+                            width: 00%;
+                            height: 100%;
+                            border-radius: 50%;
+                        }
+                    }
+                    section{
+                        .slogan, .prix{
+                            color: black;
+                        }
+                        ul{
+                            list-style: none;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            gap: 10px;
+                            li{
+                                border: 2px solid #f2f2f2;
+                                border-radius: 15px;
+                                color: #d3573c;
+                                padding: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
