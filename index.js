@@ -6,7 +6,8 @@ async function loadPhotographers() {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
     const photographers = await response.json();
-    displayPhotographers(photographers); // Appel de la fonction pour afficher les photographes
+    // Appel de la fonction pour afficher les photographes
+    displayPhotographers(photographers); 
   } catch (error) {
     console.error("Erreur lors de la récupération des données : ", error);
   }
@@ -24,7 +25,8 @@ function createPhotographerCard(photographer) {
   const villeElement = document.createElement("p");
   const taglineElement = document.createElement("p");
   const prixElement = document.createElement("span");
-  const tagsContainer = createTagsContainer(photographer.tags); // Fonction pour créer le conteneur de tags
+  // Fonction pour créer le conteneur de tags
+  const tagsContainer = createTagsContainer(photographer.tags); 
 
   // Remplissage des éléments avec les données du photographe
   imageElement.src = photographer.portrait;
@@ -69,11 +71,13 @@ function createTagsContainer(tags) {
 // ***** Affichage des photographes *****
 function displayPhotographers(photographers) {
   const sectionPhotographers = document.querySelector("body section");
-  sectionPhotographers.innerHTML = ''; // Vider la section avant d'ajouter les photographes
+  // Vider la section avant d'ajouter les photographes
+  sectionPhotographers.innerHTML = ''; 
 
   photographers.forEach(photographer => {
-    const photographerCard = createPhotographerCard(photographer); // Créer la carte pour chaque photographe
-    sectionPhotographers.appendChild(photographerCard); // Ajouter la carte au DOM
+    // Créer la carte pour chaque photographe
+    const photographerCard = createPhotographerCard(photographer); 
+    sectionPhotographers.appendChild(photographerCard);
   });
 
   // Appliquer le style à la section
@@ -128,6 +132,60 @@ function styleTag(tagElement) {
   `;
 }
 // ********************************
+
+
+// ***** Filtrer les photographes par tags *****
+function filterPhotographers(tag) {
+  // Charger les données des photographes
+  loadPhotographers(tag); // On passe le tag à la fonction loadPhotographers
+}
+// ********************************************
+
+
+// ***** Récupération des données et filtrage *****
+async function loadPhotographers(filterTag = "") {
+  try {
+    const response = await fetch("data.json");
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    const photographers = await response.json();
+
+
+
+        // Sélectionner les boutons
+      const filterArtBtn = document.getElementById("filterArt");
+      const filterPortraitBtn = document.getElementById("filterPortrait");
+      const filterArchitectureBtn = document.getElementById("filterArchitecture");
+      const filterVoyageBtn = document.getElementById("filterVoyage");
+      const filterSportBtn = document.getElementById("filterSport");
+      const filterAnimauxBtn = document.getElementById("filterAnimaux");
+      const filterEvenementsBtn = document.getElementById("filterEvenements");
+
+    // Ajouter des écouteurs d'événements pour chaque bouton
+    filterArtBtn.addEventListener("click", () => filterPhotographers('art'));
+    filterPortraitBtn.addEventListener("click", () => filterPhotographers('portrait'));
+    filterArchitectureBtn.addEventListener("click", () => filterPhotographers('architecture'));
+    filterVoyageBtn.addEventListener("click", () => filterPhotographers('voyage'));
+    filterSportBtn.addEventListener("click", () => filterPhotographers('sport'));
+    filterAnimauxBtn.addEventListener("click", () => filterPhotographers('animaux'));
+    filterEvenementsBtn.addEventListener("click", () => filterPhotographers('événements'));
+
+
+    // Si un filtre est appliqué, on filtre les photographes par tag
+    if (filterTag) {
+      const filteredPhotographers = photographers.filter(photographer =>
+        photographer.tags.includes(filterTag)
+      );
+      displayPhotographers(filteredPhotographers); // Affiche seulement les photographes filtrés
+    } else {
+      displayPhotographers(photographers); // Affiche tous les photographes si aucun filtre
+    }
+  } catch (error) {
+    console.error("Erreur lors de la récupération des données : ", error);
+  }
+}
+// ***********************************************
 
 
 // ***** Appel de la fonction pour charger les photographes *****
