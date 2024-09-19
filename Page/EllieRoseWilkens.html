@@ -1,69 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EllieRoseWilkens</title>
-    <link rel="stylesheet" href="../style/stylePage/stylePage.css">
+    <title>Photographes avec boucle for</title>
 </head>
 <body>
-    <body>
-        <header>
-            <img class="header__logo" src="../assets/logo/logo.PNG" alt="logo FishEye">
-        </header>
-        <main>
-            <article>
-                <header>
-                    <section class="title__section">
-                        <h2>Ellie-Rose Wilkens</h2>
-                        <p>Paris, France</p>
-                    </section>
-                    <section class="slogan__section">
-                        <div class="divSection">
-                            <p class="slogan">Travail sur des compositions complexes</p>
-                            <ul>
-                                <li>#sport</li>
-                                <li>#architecture</li>
-                            </ul>
-                        </div>
-                    </section>
-                </header>
-                <button>Contactez moi</button>
-                <figure>
-                    <img src="../assets/Ellie Rose/Architecture_Horseshoe.jpg" alt="Portrait miniature de John Doe">
-                </figure>
-            </article>
-            <h3>Trier par</h3>
-            <section class="image">
-                <div>
-                    <img src="../assets/Ellie Rose/Sport_Sky_Cross.jpg" alt="">
-                </div>
-                <div>
-                    <img src="../assets/Ellie Rose/Architecture_Connected_Curves.jpg" alt="">
-                </div>
-                <div>
-                    <img src="../assets/Ellie Rose/sport_water_tunnel.jpg" alt="">
-                </div>
-                <div>
-                    <img src="../assets/Ellie Rose/Architecture_Water_on_Modern.jpg" alt="">
-                </div>
-                <div>
-                    <img src="../assets/Ellie Rose/Architecture_White_Light.jpg" alt="">
-                </div>
-                <div>
-                    <img src="../assets/Ellie Rose/Sport_Jump.jpg" alt="">
-                </div>
-                <div>
-                    <img src="../assets/Ellie Rose/Sport_Next_Hold.jpg" alt="">
-                </div>
-                <div>
-                    <img src="../assets/Ellie Rose/Sport_Race_End.jpg" alt="">
-                </div>
-                <div>
-                    <img src="../assets/Ellie Rose/Sport_Sky_Cross.jpg" alt="">
-                </div>
-            </section>
-        </main>
-    </body>
+
+    <div id="tagsContainer">
+        <!-- Les tags seront insérés ici par JavaScript -->
+    </div>
+
+    <script>
+        const photographer = {
+            "nom": "John Doe",
+            "ville": "Paris",
+            "pays": "France",
+            "tags": ["voyage", "architecture"],
+            "tagline": "Capturez la beauté du monde",
+            "prix": 250
+        };
+
+        const tagsContainer = document.getElementById("tagsContainer");
+
+        // Boucle for pour parcourir les tags
+        for (let i = 0; i < photographer.tags.length; i++) {
+            const tag = photographer.tags[i];
+
+            // Créer un élément span pour chaque tag
+            const tagElement = document.createElement("span");
+            tagElement.textContent = `#${tag} `; // Ajoute un "#" devant chaque tag
+
+            // Ajouter le tag au conteneur
+            tagsContainer.appendChild(tagElement);
+        }
+    </script>
+
 </body>
 </html>

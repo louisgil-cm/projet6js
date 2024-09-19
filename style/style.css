@@ -35,63 +35,8 @@ html body header .header__bannerTag li {
   padding: 2px;
   color: #901c1c;
   padding: 5px;
+  flex: 1;
 }
 html body header .header__title {
   color: #901c1c;
-}
-html body main {
-  display: flex;
-  flex-wrap: wrap;
-}
-html body main a {
-  flex: 1 1 calc(30.33% - 20px);
-}
-html body main a article {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 10px;
-  text-align: center;
-  padding: 20px;
-}
-html body main a article header {
-  display: flex;
-  flex-direction: column;
-}
-html body main a article header h2 {
-  color: #d3573c;
-}
-html body main a article header p {
-  color: #901c1c;
-  font-weight: bold;
-}
-html body main a article figure {
-  background-color: yellow;
-  height: 200px;
-  width: 200px;
-  border-radius: 50%;
-}
-html body main a article figure img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 0%;
-  height: 100%;
-  border-radius: 50%;
-}
-html body main a article section .slogan, html body main a article section .prix {
-  color: black;
-}
-html body main a article section ul {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-html body main a article section ul li {
-  border: 2px solid #f2f2f2;
-  border-radius: 15px;
-  color: #d3573c;
-  padding: 5px;
 }/*# sourceMappingURL=style.css.map */

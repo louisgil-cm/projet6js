@@ -1,0 +1,66 @@
+
+  [
+      {
+        "nom": "Mimi Keel",
+        "id": 243,
+        "ville": "Londres, UK",
+        "pays": "Royaume-Uni",
+        "tags": ["portrait", "événements", "voyages", "animaux"],
+        "tagline": "Voir le beau dans le quotidien",
+        "prix": 400,
+        "portrait": "assets/Mimi/Portrait_Nora.jpg"
+      },
+      {
+        "nom": "Ellie-Rose Wilkens",
+        "id": 930,
+        "ville": "Paris, France",
+        "pays": "France",
+        "tags": ["sport", "architecture"],
+        "tagline": "Capteur de compositions complexes",
+        "prix": 250,
+        "portrait": "assets/Ellie Rose/Architecture_Horseshoe.jpg"
+      },
+      {
+        "nom": "Tracy Galindo",
+        "id": 82,
+        "ville": "Montréal, Canada",
+        "pays": "Canada",
+        "tags": ["art", "mode", "événements"],
+        "tagline": "Photographe freelance",
+        "prix": 500,
+        "portrait": "assets/Tracy/Fashion_Urban_Jungle.jpg"
+      },
+      {
+        "nom": "Nabeel Bradford",
+        "id": 527,
+        "ville": "Mexico City, Mexico",
+        "pays": "Mexique",
+        "tags": ["voyage", "portrait"],
+        "tagline": "Toujours aller de l'avant",
+        "prix": 350,
+        "portrait": "assets/Nabeel/Travel_Outdoor_Baths.jpg"
+      },
+      {
+        "nom": "Rhode Dubois",
+        "id": 925,
+        "ville": "Barcelona, Spain",
+        "pays": "Espagne",
+        "tags": ["sport", "mode", "événements", "animaux"],
+        "tagline": "Je crée des souvenirs",
+        "prix": 275,
+        "portrait": "assets/Rhode/Fashion_Melody_Red_on_Stripes.jpg"
+      },
+      {
+        "nom": "Marcel Nikolic",
+        "id": 195,
+        "ville": "Berlin, Germany",
+        "pays": "Allemagne",
+        "tags": ["voyage", "architecture"],
+        "tagline": "Toujours à la recherche de LA photo",
+        "prix": 300,
+        "portrait": "assets/Marcel/Travel_Tower.jpg"
+      }
+    ]
+
+  
+ 

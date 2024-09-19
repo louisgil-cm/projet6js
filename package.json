@@ -1,0 +1,11 @@
+{
+  "name": "mebadandzielouisgildas_3_13092024",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "gildas",
+  "license": "ISC",
+  "description": ""
+}
