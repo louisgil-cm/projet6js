@@ -1,123 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Redirection avec Cadre</title>
+    <style>
+        .myDiv {
+            padding: 20px;
+            background-color: lightgray; /* Couleur de fond */
+            text-align: center; /* Centrer le texte */
+            cursor: pointer; /* Changer le curseur */
+        }
+        .selected {
+            outline: 2px solid #4CAF50; /* Cadre vert */
+            outline-offset: 5px; /* Espace entre l'élément et le cadre */
+        }
+    </style>
 </head>
 <body>
-    <div id="sorting">
-        <label for="sortOptions">Trier par :</label>
-        <select id="sortOptions">
-            <option value="popularite">Popularité</option>
-            <option value="date">Date</option>
-            <option value="titre">Titre</option>
-        </select>
-    </div>
+    <div class="myDiv" tabindex="0">Cliquez ici pour aller à une autre page</div>
+
     <script>
-        // Ajout des événements pour le menu de tri
-        function attacherSortingEvent() {
-            const sortOptions = document.getElementById("sortOptions");
-            sortOptions.addEventListener("change", () => {
-                afficherGaleriePhotographe();
-            });
-        }
+        // Sélectionner l'élément
+        const myDiv = document.querySelector('.myDiv');
 
-        // Fonction pour trier les médias
-        function trierMedias(medias, critere) {
-            switch (critere) {
-                case "popularite":
-                    return medias.sort((a, b) => b.likes - a.likes);
-                case "date":
-                    return medias.sort((a, b) => new Date(b.date) - new Date(a.date)); 
-                case "titre":
-                    return medias.sort((a, b) => a.title.localeCompare(b.title)); 
-                default:
-                    return medias; // Pas de tri par défaut
-            }
-        }
-
-        // Affichage des médias du photographe dans la galerie 
-        function afficherGaleriePhotographe() {
-            const gallerySection = document.querySelector("#photographerGallery .media");
-            gallerySection.innerHTML = "";
-            const photographerMedia = recupererMediasPhotographe();
-
-            // Récupérer le critère de tri sélectionné
-            const sortOptions = document.getElementById("sortOptions");
-            const selectedSort = sortOptions.value;
-
-            // Trier les médias en fonction du critère sélectionné
-            const sortedMedia = trierMedias(photographerMedia, selectedSort);
-
-            sortedMedia.forEach(media => {
-                const mediaElement = document.createElement("div");
-                mediaElement.classList.add("galleryItem");
-
-                let likesContainer, likesElement, likeButton;
-
-                if (media.typeMedia === "video") {
-                    const videoElement = document.createElement("video");
-                    videoElement.src = media.video;
-                    videoElement.controls = true;
-
-                    const footerElement = document.createElement("footer");
-                    const titleElement = document.createElement("h3");
-                    titleElement.innerText = media.title;
-
-                    likesContainer = document.createElement("span");
-                    likesElement = document.createElement("strong");
-                    likesElement.innerText = media.likes;
-                    likesElement.classList.add("likes");
-
-                    likeButton = document.createElement("button");
-                    likeButton.innerText = "♥";
-
-                    likesContainer.appendChild(likesElement);
-                    likesContainer.appendChild(likeButton);
-                    footerElement.appendChild(titleElement);
-                    footerElement.appendChild(likesContainer);
-
-                    mediaElement.appendChild(videoElement);
-                    mediaElement.appendChild(footerElement);
-
-                } else {
-                    const imageElement = document.createElement("img");
-                    imageElement.src = media.image;
-                    imageElement.alt = media.title;
-
-                    const footerElement = document.createElement("footer");
-                    const titleElement = document.createElement("h3");
-                    titleElement.innerText = media.title;
-
-                    likesContainer = document.createElement("span");
-                    likesElement = document.createElement("strong");
-                    likesElement.innerText = media.likes;
-                    likesElement.classList.add("likes");
-
-                    likeButton = document.createElement("button");
-                    likeButton.innerText = "♥";
-
-                    likesContainer.appendChild(likesElement);
-                    likesContainer.appendChild(likeButton);
-                    footerElement.appendChild(titleElement);
-                    footerElement.appendChild(likesContainer);
-
-                    mediaElement.appendChild(imageElement);
-                    mediaElement.appendChild(footerElement);
-                }
-
-                // appel de la fonction des likes
-                Likes(media, likeButton, likesElement);
-
-                gallerySection.appendChild(mediaElement);
-            });
-        }
-
-        // Charger les données des photographes et des médias
-        loadPhotographersData();
-        attacherSortingEvent();  // Attacher les événements de tri lors du chargement
-
+        // Ajouter un gestionnaire d'événements pour le clic
+        myDiv.addEventListener('click', function() {
+            this.classList.add('selected'); // Ajouter la classe 'selected' pour montrer le cadre
+            
+            // Attendre un moment pour laisser le cadre visible
+            setTimeout(() => {
+                window.location.href = "https://www.votrepage.com"; // Remplacez par l'URL de destination
+            }, 300); // 300 ms pour voir le cadre avant la redirection
+        });
     </script>
 </body>
 </html>

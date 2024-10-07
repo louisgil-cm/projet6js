@@ -15,23 +15,39 @@ html {
             gap: 5px;
             justify-content: space-between;
             flex-wrap: wrap;
-            .header__logo {
-                height: 100px;
-                width: 200px;
-            }
-
-            .header__bannerTag {
+            display:flex;
+            justify-content: space-between;
+            strong{
                 display: flex;
-                list-style: none;
-                margin-right: 25px;
-                gap: 10px;
-                flex-wrap: wrap;
-            }
+                align-items: center;
+                .title1{                    
+                    display: none;
+                }
+            }  
+            nav{
+                button{
+                    border: 2px solid #f2f2f2;
+                    border-radius: 15px;
+                    font-size: 1.2rem;
+                    padding: 2px;
+                    background-color: white;
+                    color: #901c1c;
+                    padding: 5px;
+                    flex: 1;
+                    cursor: pointer;
+                }
+                button:focus {
+                    outline: 1px solid  #f2f2f2; 
+                    background-color:  #901c1c;
+                    color: white;
+                }
 
+            }
             .header__title {
                 color: #901c1c;
-
-            }
+                font-size: 24px;
+             }
+            
            }
         }
         section{
@@ -80,13 +96,33 @@ html {
     }
 }
 
-button{
-    border: 2px solid #f2f2f2;
-    border-radius: 15px;
-    font-size: 1.2rem;
-    padding: 2px;
-    background-color: white;
+
+
+
+
+@media screen and (max-width: 1115px) {
+    .header__title {
+        display: none;
+    }
+    .title1{
+    display: block !important;
     color: #901c1c;
-    padding: 5px;
-    flex: 1;
-}
+    }
+  
+  }
+
+
+  @media (max-width: 1024px) {
+    section  article{
+      width: 48%; 
+      flex: 1 1 calc(48% - 20px); 
+    }
+  }
+
+  
+  @media (max-width: 768px) {
+    section  article{
+      width: 100%; 
+      flex: 1 1 100%; 
+    }
+  }

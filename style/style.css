@@ -16,20 +16,35 @@ html body header div {
   gap: 5px;
   justify-content: space-between;
   flex-wrap: wrap;
-}
-html body header div .header__logo {
-  height: 100px;
-  width: 200px;
-}
-html body header div .header__bannerTag {
   display: flex;
-  list-style: none;
-  margin-right: 25px;
-  gap: 10px;
-  flex-wrap: wrap;
+  justify-content: space-between;
+}
+html body header div strong {
+  display: flex;
+  align-items: center;
+}
+html body header div strong .title1 {
+  display: none;
+}
+html body header div nav button {
+  border: 2px solid #f2f2f2;
+  border-radius: 15px;
+  font-size: 1.2rem;
+  padding: 2px;
+  background-color: white;
+  color: #901c1c;
+  padding: 5px;
+  flex: 1;
+  cursor: pointer;
+}
+html body header div nav button:focus {
+  outline: 1px solid #f2f2f2;
+  background-color: #901c1c;
+  color: white;
 }
 html body header div .header__title {
   color: #901c1c;
+  font-size: 24px;
 }
 html body section {
   display: flex;
@@ -72,13 +87,24 @@ html body section article div span {
   color: #d3573c;
 }
 
-button {
-  border: 2px solid #f2f2f2;
-  border-radius: 15px;
-  font-size: 1.2rem;
-  padding: 2px;
-  background-color: white;
-  color: #901c1c;
-  padding: 5px;
-  flex: 1;
+@media screen and (max-width: 1115px) {
+  .header__title {
+    display: none;
+  }
+  .title1 {
+    display: block !important;
+    color: #901c1c;
+  }
+}
+@media (max-width: 1024px) {
+  section article {
+    width: 48%;
+    flex: 1 1 calc(48% - 20px);
+  }
+}
+@media (max-width: 768px) {
+  section article {
+    width: 100%;
+    flex: 1 1 100%;
+  }
 }/*# sourceMappingURL=style.css.map */

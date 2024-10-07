@@ -98,12 +98,13 @@ function afficherGaleriePhotographe(photographerMedia = null) {
 
     photographerMedia.forEach(media => {
         const mediaElement = document.createElement("div");
-        mediaElement.classList.add("galleryItem");
+       
 
         let likesContainer, likesElement, likeButton;
 
         if (media.typeMedia === "video") {
             const videoElement = document.createElement("video");
+            mediaElement.classList.add("galleryItem");
             videoElement.src = media.video;
             videoElement.controls = true;
 
@@ -129,6 +130,7 @@ function afficherGaleriePhotographe(photographerMedia = null) {
 
         } else {
             const imageElement = document.createElement("img");
+            mediaElement.classList.add("galleryItem");
             imageElement.src = media.image;
             imageElement.alt = media.title;
 
@@ -205,12 +207,22 @@ function attacherLightboxEvents() {
 
     const galleryItems = document.querySelectorAll("#photographerGallery .galleryItem");
 
-    // ajout des evenements pour chaque  element de la galerie
+    // ajout des evenements pour chaque element de la galerie
     galleryItems.forEach((item, index) => {
         item.addEventListener('click', () => {
             currentIndex = index;
             openLightBox(item.cloneNode(true));
         });
+
+        // Trouver le bouton "like" à l'intérieur de l'élément et empêcher la propagation du clic
+        const likeButton = item.querySelector('button');
+        if (likeButton) {
+            likeButton.addEventListener('click', (event) => {
+                event.stopPropagation();  // Empêche la lightbox de s'ouvrir
+                const likesElement = item.querySelector('.likes strong');
+                Likes(mediaData[index], likeButton, likesElement);  // Gérer le like
+            });
+        }
     });
 
     // Ouverture de la lightbox
@@ -243,6 +255,7 @@ function attacherLightboxEvents() {
         openLightBox(galleryItems[currentIndex].cloneNode(true));
     });
 }
+
 
 function gererModal(modalId, boutonId, closeClass) {
     // Obtenir le modal

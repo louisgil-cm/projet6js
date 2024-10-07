@@ -5,7 +5,7 @@
       "id": 243,
       "city": "London",
       "country": "UK",
-      "tags": ["portrait", "events", "travel", "animals"],
+      "tags": ["portrait", "events", "voyage", "animals"],
       "tagline": "Voir le beau dans le quotidien",
       "price": 400,
       "portrait": "assets/Mimi/Portrait_Nora.jpg"
@@ -25,7 +25,7 @@
       "id": 82,
       "city": "Montreal",
       "country": "Canada",
-      "tags": ["art", "fashion", "events"],
+      "tags": ["art", "fashion", "événements"],
       "tagline": "Photographe freelance",
       "price": 500,
        "portrait": "assets/Tracy/Fashion_Urban_Jungle.jpg"

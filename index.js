@@ -31,15 +31,20 @@ async function loadData(filterTag = "") {
 let headerBloc = document.querySelector("header");
 let headerElement = `
   <div>
-    <img class="header__logo" src="assets/logo/logo.PNG" alt="logo FishEye">
-    <button id="filterArt">#Art</button>
-    <button id="filterPortrait">#Portrait</button>
-    <button id="filterArchitecture">#Architecture</button>
-    <button id="filterVoyage">#Voyage</button>
-    <button id="filterSport">#Sport</button>
-    <button id="filterAnimaux">#Animaux</button>
-    <button id="filterEvenements">#Événements</button>
-    <button id="filterMode">#Mode</button>
+    <strong>
+      <img class="header__logo" src="assets/logo/logo.png" alt="logo FishEye">
+      <h1 class="title1">Nos photographes</h1>
+    </strong>
+    <nav>
+      <button id="filterArt" tabindex="0">#Art</button>
+      <button id="filterPortrait" tabindex="0">#Portrait</button>
+      <button id="filterArchitecture" tabindex="0">#Architecture</button>
+      <button id="filterVoyage" tabindex="0">#Voyage</button>
+      <button id="filterSport" tabindex="0">#Sport</button>
+      <button id="filterAnimaux" tabindex="0">#Animaux</button>
+      <button id="filterEvenements" tabindex="0">#Événements</button>
+      <button id="filterMode" tabindex="0">#Mode</button>
+    </nav>
     <h1 class="header__title">Nos photographes</h1>
   </div>
 `;
@@ -49,6 +54,7 @@ headerBloc.innerHTML = headerElement;
 // Création du profile d'un photographe
 function createPhotographerCard(photographer) {
   const photographersElement = document.createElement("article");
+  photographersElement.setAttribute('tabindex', '0');
 
   // Création des balises
   const imageElement = document.createElement("img");
@@ -77,7 +83,7 @@ function createPhotographerCard(photographer) {
   imageElement.addEventListener("click", () => {
     window.location.href = `photographer.html?id=${photographer.id}`;
   });
-
+  
   return photographersElement; // Retourne la carte du photographe
 }
 
@@ -139,6 +145,7 @@ filterSportBtn.addEventListener("click", () => filterPhotographers('sport'));
 filterAnimauxBtn.addEventListener("click", () => filterPhotographers('animaux'));
 filterEvenementsBtn.addEventListener("click", () => filterPhotographers('événements'));
 filterModeBtn.addEventListener("click", () => filterPhotographers('mode'));
+
 
 
 
