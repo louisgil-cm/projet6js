@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lightbox avec Flexbox</title>
+    <style>
+        /* Style des divs avec Flexbox */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .container div {
+            flex: 0 1 calc(33.333% - 20px); /* Trois divs par ligne */
+            padding: 20px;
+            color: white;
+            text-align: center;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .div-1 { background-color: red; }
+        .div-2 { background-color: green; }
+        .div-3 { background-color: blue; }
+        .div-4 { background-color: orange; }
+        .div-5 { background-color: purple; }
+        .div-6 { background-color: teal; }
+        .div-7 { background-color: pink; }
+        .div-8 { background-color: navy; }
+        .div-9 { background-color: gray; }
+
+        /* Style de la lightbox */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox-content {
+            background-color: #1bcc24;
+            padding: 40px;
+            border-radius: 10px;
+            font-size: 24px;
+            width: 100%;
+            height: 100%; 
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative; 
+        }
+
+        /* Style des boutons */
+        .controls button {
+            padding: 15px 30px;
+            background-color: #555;
+            color: white;
+            border: none;
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        #prev {
+            left: 10px; 
+        }
+
+        #next {
+            right: 10px; 
+        }
+
+       
+        #close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: red;
+            border-radius: 50%;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="div-1">Contenu 1</div>
+    <div class="div-2">Contenu 2</div>
+    <div class="div-3">Contenu 3</div>
+    <div class="div-4">Contenu 4</div>
+    <div class="div-5">Contenu 5</div>
+    <div class="div-6">Contenu 6</div>
+    <div class="div-7">Contenu 7</div>
+    <div class="div-8">Contenu 8</div>
+    <div class="div-9">Contenu 9</div>
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+    <div class="lightbox-content" id="lightbox-content"></div>
+    <button id="prev">Précédent</button>
+    <button id="next">Suivant</button>
+    <button id="close">✖</button>
+</div>
+
+<script>
+    const gridItems = document.querySelectorAll('.container div');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxContent = document.getElementById('lightbox-content');
+    let currentIndex = 0;
+
+    gridItems.forEach((item, index) => {
+        item.addEventListener('click', () => {
+            currentIndex = index;
+            showLightbox(item.cloneNode(true));  
+        });
+    });
+
+    function showLightbox(content) {
+        lightboxContent.innerHTML = '';  
+        lightboxContent.appendChild(content);  
+        lightbox.style.display = 'flex';
+    }
+
+    // Fermer la lightbox
+    document.getElementById('close').addEventListener('click', () => {
+        lightbox.style.display = 'none';
+    });
+
+    // Passer à la div suivante
+    document.getElementById('next').addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % gridItems.length;
+        showLightbox(gridItems[currentIndex].cloneNode(true));
+    });
+
+    // Passer à la div précédente
+    document.getElementById('prev').addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + gridItems.length) % gridItems.length;
+        showLightbox(gridItems[currentIndex].cloneNode(true));
+    });
+
+    // Navigation avec les touches du clavier
+    document.addEventListener('keydown', (e) => {
+        if (lightbox.style.display === 'flex') {
+            if (e.key === 'ArrowRight') {
+                document.getElementById('next').click();
+            } else if (e.key === 'ArrowLeft') {
+                document.getElementById('prev').click();
+            } else if (e.key === 'Escape') {
+                document.getElementById('close').click();
+            }
+        }
+    });
+</script>
+
+
+
+
+</body>
+</html>
+

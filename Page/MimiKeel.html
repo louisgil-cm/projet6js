@@ -3,67 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MimiKeel</title>
-    <link rel="stylesheet" href="../style/stylePage/stylePage.css">
+    <title>Modale</title>
+    <!-- place au style css -->
+     <link rel="stylesheet" href="../style/stylePage/test.css">
 </head>
 <body>
-    <body>
-        <header>
-            <img class="header__logo" src="../assets/logo/logo.PNG" alt="logo FishEye">
-        </header>
-        <main>
-            <article>
-                <header>
-                    <section class="title__section">
-                        <h2>Ellie-Rose Wilkens</h2>
-                        <p>Paris, France</p>
-                    </section>
-                    <section class="slogan__section">
-                        <div class="divSection">
-                            <p class="slogan">Travail sur des compositions complexes</p>
-                            <ul>
-                                <li>#sport</li>
-                                <li>#architecture</li>
-                            </ul>
-                        </div>
-                    </section>
-                </header>
-                <button>Contactez moi</button>
-                <figure>
-                    <img src="../assets/Ellie Rose/Architecture_Horseshoe.jpg" alt="Portrait miniature de John Doe">
-                </figure>
-            </article>
-            <h3>Trier par</h3>
-            <section class="image">
-                <div>
-                    <img src="../assets/Ellie Rose/Sport_Sky_Cross.jpg" alt="">
-                </div>
-                <div>
-                    <img src="../assets/Ellie Rose/Architecture_Connected_Curves.jpg" alt="">
-                </div>
-                <div>
-                    <img src="../assets/Ellie Rose/sport_water_tunnel.jpg" alt="">
-                </div>
-                <div>
-                    <img src="../assets/Ellie Rose/Architecture_Water_on_Modern.jpg" alt="">
-                </div>
-                <div>
-                    <img src="../assets/Ellie Rose/Architecture_White_Light.jpg" alt="">
-                </div>
-                <div>
-                    <img src="../assets/Ellie Rose/Sport_Jump.jpg" alt="">
-                </div>
-                <div>
-                    <img src="../assets/Ellie Rose/Sport_Next_Hold.jpg" alt="">
-                </div>
-                <div>
-                    <img src="../assets/Ellie Rose/Sport_Race_End.jpg" alt="">
-                </div>
-                <div>
-                    <img src="../assets/Ellie Rose/Sport_Sky_Cross.jpg" alt="">
-                </div>
-            </section>
-        </main>
-    </body>
+    
+    <section class="modalContent">
+      
+        <!-- conception de la partie de la modale qui s'ouvrera apres le clic sur le button dans une div-->
+        <div class="modale" id="modale">
+            <div class="headerModale">
+                <!-- titre de la modale -->
+                <h1 class="modaleTitle">Contactez-moi</h1>
+                <!-- close modale (&times;) genère la croix-->
+                <span class="closeModale" id="closeModale">&times;</span>
+            </div>
+            <!-- balise qui affichera le nom de la pernone à contacter -->
+            <h2 class="name"></h2>
+            <!-- formulaire de la modale ouvrante -->
+            <form action="get">
+                <label for="Penom">Prénom</label>
+                <input type="text">
+                <label for="Nom">Nom</label>
+                <input type="text">
+                <label for="Email">Email</label>
+                <input type="email" name="email" id="email">
+                <label for="commmentaire">Votre message</label>
+                <textarea name="" id=""></textarea>
+                <input class="send" type="submit" value="Envoyez" style="cursor: pointer;">
+            </form>
+        </div>
+    </section>
+    <!-- place au code js -->
+     <script>
+        // recuperation des differents buttons depuis le html
+        // en premier, le boutton sur lequel on va cliquer pour ouvrir la modale
+        let btnModale = document.getElementById("btn")
+        // variavle qui va contenir toute la modale
+        let modale = document.getElementById("modale")
+        let offModale =  document.getElementsByClassName("closeModale")[0];
+
+        //ouverture de la modale au clic sur le bouton
+        btnModale.onclick = function(){
+            modale.style.display = "block"
+        }
+        // fermeture de la modale au clic sur la croix
+        offModale.onclick = function () {
+            modale.style.display = "none"
+        }
+        // au clic sur la page en dehors de la modale, elle se ferme.
+        window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+     </script>
 </body>
 </html>

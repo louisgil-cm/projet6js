@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails du Photographe</title>
+    <link rel="stylesheet" href="../style/stylePage/stylePage.css">
+    <script src="photographer.js" defer></script>
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img class="header__logo" src="assets/logo/logo.PNG" alt="logo FishEye" id="test">
+        </a>
+    </header>
+    <main>
+        <section class="button">
+            <!-- Bouton pour ouvrir la Modal -->
+            <button id="myBtn">Contantez-Moi</button>
+   
+       <!-- Le Modal -->
+       <div id="myModal" class="modal" >
+           <!-- Contenu du Modal -->
+           <div class="modalContent">
+               <div class="header__form">
+                   <div class="title">
+                        <h1>Contactez-moi</h1>
+                        <span class="close">&times;</span>
+                   </div>
+                   <h2 class="name"></h2>
+               </div>
+               <form action="get">
+                   <label for="Penom">Prénom</label>
+                   <input type="text">
+                   <label for="Nom">Nom</label>
+                   <input type="text">
+                   <label for="Email">Email</label>
+                   <input type="email" name="email" id="email">
+                   <label for="commmentaire">Votre message</label>
+                   <textarea name="" id=""></textarea>
+                   <input class="send" type="submit" value="Envoyez">
+               </form>
+           </div>
+       </div>
+       </section>
+        <section id="photographerDetails">
+        </section>
+        <div id="sorting">
+            <label for="sortOption">Trier par :</label>
+            <select id="sortOptions">
+                <option value="popularite">Popularité</option>
+                <option value="date">Date</option>
+                <option value="titre">Titre</option>
+            </select>
+        </div>
+        <section id="photographerGallery">
+            <div class="media"></div>
+            <div class="lightbox" id="lightbox">
+                <div class="lightboxContent" id="lightboxContent">
+                </div>
+                <button class="arrow left" id=" left">&#10094;</button>
+                <button class="arrow right" id="right">&#10095;</button>
+                <button class="close" id="close">&times;</button>
+            </div>
+        </section>
+        <section>
+            <div id="pricePerDay"></div>
+            <div id="totalLikes"></div>
+        </section>
+    </main>
+</body>
+
+</html>
+
+
+
+

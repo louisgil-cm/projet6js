@@ -1,65 +1,712 @@
+{
+  "photographers": [
+    {
+      "name": "Mimi Keel",
+      "id": 243,
+      "city": "London",
+      "country": "UK",
+      "tags": ["portrait", "events", "travel", "animals"],
+      "tagline": "Voir le beau dans le quotidien",
+      "price": 400,
+      "portrait": "assets/Mimi/Portrait_Nora.jpg"
+    },
+    {
+      "name": "Ellie-Rose Wilkens",
+      "id": 930,
+      "city": "Paris",
+      "country": "France",
+      "tags": ["sports", "architecture"],
+      "tagline": "Capturer des compositions complexes",
+      "price": 250,
+     "portrait": "assets/Ellie Rose/Architecture_Horseshoe.jpg"
+    },
+    {
+      "name": "Tracy Galindo",
+      "id": 82,
+      "city": "Montreal",
+      "country": "Canada",
+      "tags": ["art", "fashion", "events"],
+      "tagline": "Photographe freelance",
+      "price": 500,
+       "portrait": "assets/Tracy/Fashion_Urban_Jungle.jpg"
+    },
+    {
+      "name": "Nabeel Bradford",
+      "id": 527,
+      "city": "Mexico City",
+      "country": "Mexico",
+      "tags": ["travel", "portrait"],
+      "tagline": "Toujours aller de l'avant",
+      "price": 350,
+      "portrait": "assets/Nabeel/Travel_Outdoor_Baths.jpg"
+    },
+    {
+      "name": "Rhode Dubois",
+      "id": 925,
+      "city": "Barcelona",
+      "country": "Spain",
+      "tags": ["sport", "fashion", "events", "animals"],
+      "tagline": "Je crée des souvenirs",
+      "price": 275,
+      "portrait": "assets/Rhode/Fashion_Melody_Red_on_Stripes.jpg"
+    },
+    {
+      "name": "Marcel Nikolic",
+      "id": 195,
+      "city": "Berlin",
+      "country": "Germany",
+      "tags": ["travel", "architecture"],
+      "tagline": "Toujours à la recherche de la photo",
+      "price": 300,
+      "portrait": "assets/Marcel/Travel_Tower.jpg"
+    }
+  ],
+  "media": [
+    {
+      "id": 342550,
+      "photographerId": 82,
+      "title": "Fashion Yellow Beach",
+      "image": "Medias/Tracy/Art_Mine.jpg",
+      " typeMedia": "image",
+      "tags": ["fashion"],
+      "likes": 62,
+      "date": "2011-12-08",
+      "price": 55
+    },
+    {
+      "id": 8520927,
+      "photographerId": 82,
+      "title": "Fashion Urban Jungle",
+      "image": "Medias/Tracy/Art_Purple_light.jpg",
+      " typeMedia": "image",
+      "tags": ["fashion"],
+      "likes": 11,
+      "date": "2011-11-06",
+      "price": 55
+    },
+    {
+      "id": 9025895,
+      "photographerId": 82,
+      "title": "Fashion Pattern on a Pattern",
+      "image": "Medias/Tracy/Art_Triangle_Man.jpg",
+      " typeMedia": "image",
+      "tags": ["fashion"],
+      "likes": 72,
+      "date": "2013-08-12",
+      "price": 55
+    },
+    {
+      "id": 9275938,
+      "photographerId": 82,
+      "title": "Wedding Gazebo",
+      "image": "Medias/Tracy/Event_18thAnniversary.jpg",
+      " typeMedia": "image",
+      "tags": ["events"],
+      "likes": 69,
+      "date": "2018-02-22",
+      "price": 55
+    },
+    {
+      "id": 2053494,
+      "photographerId": 82,
+      "title": "Sparkles",
+      "image": "Medias/Tracy/Event_18thAnniversary.jpg",
+      " typeMedia": "image",
+      "tags": ["events"],
+      "likes": 2,
+      "date": "2020-05-25",
+      "price": 55
+    },
+    {
+      "id": 7324238,
+      "photographerId": 82,
+      "title": "18th Anniversary",
+      "image": "Medias/Tracy/Event_Sparklers.jpg",
+      " typeMedia": "image",
+      "tags": ["events"],
+      "likes": 33,
+      "date": "2019-06-12",
+      "price": 55
+    },
+    {
+      "id": 8328953,
+      "photographerId": 82,
+      "title": "Wooden Horse Sculpture",
+      "video": "Medias/Tracy/Art_Wooden_Horse_Sculpture.mp4",
+      "typeMedia": "video",
+      "tags": ["art"],
+      "likes": 24,
+      "date": "2011-12-08",
+      "price": 100
+    },
+    {
+      "id": 7502053,
+      "photographerId": 82,
+      "title": "Triangle Man",
+      "image": "Medias/Tracy/Event_Sparklers.jpg",
+      " typeMedia": "image",
+      "tags": ["art"],
+      "likes": 88,
+      "date": "2007-05-07",
+      "price": 55
+    },
+    {
+      "id": 8523492,
+      "photographerId": 82,
+      "title": "Purple Tunnel",
+      "image": "Medias/Tracy/Event_WeddingGazebo.jpg",
+      " typeMedia": "image",
+      "tags": ["art"],
+      "likes": 24,
+      "date": "2018-05-05",
+      "price": 55
+    },
+    {
+      "id": 75902334,
+      "photographerId": 82,
+      "title": "Art Mine",
+      "image": "Medias/Tracy/Fashion_Urban_Jungle.jpg",
+      " typeMedia": "image",
+      "tags": ["art"],
+      "likes": 75,
+      "date": "2019-11-25",
+      "price": 55
+    },
 
-  [
-      {
-        "nom": "Mimi Keel",
-        "id": 243,
-        "ville": "Londres, UK",
-        "pays": "Royaume-Uni",
-        "tags": ["portrait", "événements", "voyages", "animaux"],
-        "tagline": "Voir le beau dans le quotidien",
-        "prix": 400,
-        "portrait": "assets/Mimi/Portrait_Nora.jpg"
-      },
-      {
-        "nom": "Ellie-Rose Wilkens",
-        "id": 930,
-        "ville": "Paris, France",
-        "pays": "France",
-        "tags": ["sport", "architecture"],
-        "tagline": "Capteur de compositions complexes",
-        "prix": 250,
-        "portrait": "assets/Ellie Rose/Architecture_Horseshoe.jpg"
-      },
-      {
-        "nom": "Tracy Galindo",
-        "id": 82,
-        "ville": "Montréal, Canada",
-        "pays": "Canada",
-        "tags": ["art", "mode", "événements"],
-        "tagline": "Photographe freelance",
-        "prix": 500,
-        "portrait": "assets/Tracy/Fashion_Urban_Jungle.jpg"
-      },
-      {
-        "nom": "Nabeel Bradford",
-        "id": 527,
-        "ville": "Mexico City, Mexico",
-        "pays": "Mexique",
-        "tags": ["voyage", "portrait"],
-        "tagline": "Toujours aller de l'avant",
-        "prix": 350,
-        "portrait": "assets/Nabeel/Travel_Outdoor_Baths.jpg"
-      },
-      {
-        "nom": "Rhode Dubois",
-        "id": 925,
-        "ville": "Barcelona, Spain",
-        "pays": "Espagne",
-        "tags": ["sport", "mode", "événements", "animaux"],
-        "tagline": "Je crée des souvenirs",
-        "prix": 275,
-        "portrait": "assets/Rhode/Fashion_Melody_Red_on_Stripes.jpg"
-      },
-      {
-        "nom": "Marcel Nikolic",
-        "id": 195,
-        "ville": "Berlin, Germany",
-        "pays": "Allemagne",
-        "tags": ["voyage", "architecture"],
-        "tagline": "Toujours à la recherche de LA photo",
-        "prix": 300,
-        "portrait": "assets/Marcel/Travel_Tower.jpg"
-      }
-    ]
+    {
+      "id": 73852953,
+      "photographerId": 925,
+      "title": "8 Rows",
+      "image": "Medias/Rhode/Animals_Majesty.jpg",
+      " typeMedia": "image",
+      "tags": ["sport"],
+      "likes": 52,
+      "date": "2013-02-30",
+      "price": 70
+    },
+    {
+      "id": 92758372,
+      "photographerId": 925,
+      "title": "Fashion Wings",
+      "image": "Medias/Rhode/Event_Emcee.jpg",
+      " typeMedia": "image",
+      "tags": ["fashion"],
+      "likes": 58,
+      "date": "2018-07-17",
+      "price": 70
+    },
+    {
+      "id": 32958383,
+      "photographerId": 925,
+      "title": "Melody Red on Stripes",
+      "image": "Medias/Rhode/Event_KeyboardCheck.jpg",
+      " typeMedia": "image",
+      "tags": ["fashion"],
+      "likes": 11,
+      "date": "2019-08-12",
+      "price": 70
+    },
+    {
+      "id": 928587383,
+      "photographerId": 925,
+      "title": "Venture Conference",
+      "image": "Medias/Rhode/Event_ProductPitch.jpg",
+      " typeMedia": "image",
+      "tags": ["events"],
+      "likes": 2,
+      "date": "2019-01-02",
+      "price": 70
+    },
+    {
+      "id": 725639493,
+      "photographerId": 925,
+      "title": "Product Pitch",
+      "image": "Medias/Rhode/Event_VentureConference.jpg", 
+      " typeMedia": "image",
+      "tags": ["events"],
+      "likes": 3,
+      "date": "2019-05-20",
+      "price": 70
+    },
+    {
+      "id": 23394384,
+      "photographerId": 925,
+      "title": "Musical Festival Keyboard",
+      "image": "Medias/Rhode/Sport_Butterfly.jpg",
+      " typeMedia": "image",
+      "tags": ["events"],
+      "likes": 52,
+      "date": "2019-07-18",
+      "price": 70
+    },
+    {
+      "id": 87367293,
+      "photographerId": 925,
+      "title": "Musical Festival Singer",
+      "image": "Medias/Rhode/Sport_2000_with_8.jpg",
+      " typeMedia": "image",
+      "tags": ["events"],
+      "likes": 23,
+      "date": "2018-02-22",
+      "price": 70
+    },
+    {
+      "id": 593834784,
+      "photographerId": 925,
+      "title": "Animal Majesty",
+      "image": "Medias/Rhode/Fashion_Wings.jpg",
+      " typeMedia": "image",
+      "tags": ["animals"],
+      "likes": 52,
+      "date": "2017-03-13",
+      "price": 70
+    },
+    {
+      "id": 83958935,
+      "photographerId": 925,
+      "title": "Cute Puppy on Sunset",
+      "video": "Medias/Rhode/Animals_Puppiness.mp4",
+       "typeMedia": "video",
+      "tags": ["animals"],
+      "likes": 52,
+      "date": "2016-06-12",
+      "price": 70
+    },
 
-  
+    {
+      "id": 394583434,
+      "photographerId": 527,
+      "title": "Rock Mountains",
+      "video": "Medias/Nabeel/Travel_Rock_Mountains.mp4",
+      "typeMedia": "video",
+      "tags": ["travel"],
+      "likes": 23,
+      "date": "2017-03-18",
+      "price": 45
+    },
+    {
+      "id": 343423425,
+      "photographerId": 527,
+      "title": "Outdoor Baths",
+      "image": "Medias/Nabeel/Portrait_AfternoonBreak.jpg",
+      "typeMedia":"image",
+      "tags": ["travel"],
+      "likes": 101,
+      "date": "2017-04-03",
+      "price": 45
+    },
+    {
+      "id": 73434243,
+      "photographerId": 527,
+      "title": "Road into the Hill",
+      "image": "Medias/Nabeel/Travel_Road_into_Hill.jpg",
+      "typeMedia":"image",
+      "tags": ["travel"],
+      "likes": 99,
+      "date": "2018-04-30",
+      "price": 45
+    },
+    {
+      "id": 23425523,
+      "photographerId": 527,
+      "title": "Bridge into the Forest",
+      "image": "Medias/Nabeel/Portrait_Sunkissed.jpg",
+      "typeMedia":"image",
+      "tags": ["travel"],
+      "likes": 34,
+      "date": "2016-04-05",
+      "price": 45
+    },
+    {
+      "id": 23134513,
+      "photographerId": 527,
+      "title": "Boat Wonderer",
+      "image": "Medias/Nabeel/Travel_Boat_Wanderer.jpg",
+      "typeMedia":"image",
+      "tags": ["travel"],
+      "likes": 23,
+      "date": "2017-03-18",
+      "price": 45
+    },
+    {
+      "id": 92352352,
+      "photographerId": 527,
+      "title": "Portrait Sunkiss",
+      "image": "Medias/Nabeel/Travel_On_the_Road.jpg",
+      "typeMedia":"image",
+      "tags": ["portrait"],
+      "likes": 66,
+      "date": "2018-05-24",
+      "price": 45
+    },
+    {
+      "id": 34513453,
+      "photographerId": 527,
+      "title": "Shaw Potrait",
+      "image": "Medias/Nabeel/Travel_Boat_Wanderer.jpg",
+      "typeMedia":"image",
+      "tags": ["portait"],
+      "likes": 52,
+      "date": "2017-04-21",
+      "price": 45
+    },
+    {
+      "id": 23523533,
+      "photographerId": 527,
+      "title": "Alexandra",
+      "image": "Medias/Marcel/Architecture_Contrast.jpg",
+      "typeMedia":"image",
+      "tags": ["portait"],
+      "likes": 95,
+      "date": "2018-11-02",
+      "price": 45
+    },
+    {
+      "id": 525834234,
+      "photographerId": 527,
+      "title": "Afternoon Break",
+      "image": "Medias/Nabeel/Travel_Bridge_into_Forest.jpg",
+      "typeMedia":"image",
+      "tags": ["portait"],
+      "likes": 25,
+      "date": "2019-01-02",
+      "price": 45
+    },
+
+    {
+      "id": 623534343,
+      "photographerId": 243,
+      "title": "Lonesome",
+      "image": "Medias/Mimi/Event_BenevidesWedding.jpg",
+      "typeMedia":"image",
+      "tags": ["travel"],
+      "likes": 88,
+      "date": "2019-02-03",
+      "price": 45
+    },
+    {
+      "id": 625025343,
+      "photographerId": 243,
+      "title": "Hillside Color",
+      "image": "Medias/Mimi/Event_PintoWedding.jpg",
+      "tags": ["travel"],
+      "likes": 85,
+      "date": "2019-04-03",
+      "price": 45
+    },
+    {
+      "id": 2525345343,
+      "photographerId": 243,
+      "title": "Wednesday Potrait",
+      "image": "Medias/Mimi/Event_SeasideWedding.jpg",
+      "tags": ["portait"],
+      "likes": 34,
+      "date": "2019-04-07",
+      "price": 45
+    },
+    {
+      "id": 2523434634,
+      "photographerId": 243,
+      "title": "Nora Portrait",
+      "image": "Medias/Marcel/Architecture_Contrast.jpg",
+      "tags": ["portait"],
+      "likes": 63,
+      "date": "2019-04-07",
+      "price": 45
+    },
+    {
+      "id": 398847109,
+      "photographerId": 243,
+      "title": "Raw Black Portrait",
+      "image": "Medias/Mimi/Portrait_Wednesday.jpg",
+      "tags": ["portait"],
+      "likes": 55,
+      "date": "2019-06-20",
+      "price": 45
+    },
+    {
+      "id": 2534342,
+      "photographerId": 243,
+      "title": "Seaside Wedding",
+      "image": "Medias/Mimi/Travel_HillsideColor.jpg",
+      "tags": ["events"],
+      "likes": 25,
+      "date": "2019-06-21",
+      "price": 45
+    },
+    {
+      "id": 65235234,
+      "photographerId": 243,
+      "title": "Boulder Wedding",
+      "image": "Medias/Mimi/Travel_Lonesome.jpg",
+      "tags": ["events"],
+      "likes": 52,
+      "date": "2019-06-25",
+      "price": 45
+    },
+    {
+      "id": 23523434,
+      "photographerId": 243,
+      "title": "Benevides Wedding",
+      "image": "assets/Mimi/Event_BenevidesWedding.jpg",
+      "tags": ["events"],
+      "likes": 77,
+      "date": "2019-06-28",
+      "price": 45
+    },
+    {
+      "id": 5234343,
+      "photographerId": 243,
+      "title": "Wild Horses in the Mountains",
+      "video": "Medias/Mimi/Animals_Wild_Horses_in_the_mountains.mp4",
+      "typeMedia": "video",
+      "tags": ["animals"],
+      "likes": 142,
+      "date": "2019-08-23",
+      "price": 60
+    },
+    {
+      "id": 95234343,
+      "photographerId": 243,
+      "title": "Rainbow Bird",
+      "image": "assets/Mimi/Portrait_Background.jpg",
+      "tags": ["animals"],
+      "likes": 59,
+      "date": "2019-07-02",
+      "price": 60
+    },
+
+    {
+      "id": 52343416,
+      "photographerId": 195,
+      "title": "Japanese Tower, Kyoto",
+      "image": "Medias/Marcel/Architecture_Contrast.jpg",
+      "typeMedia":"image",
+      "tags": ["travel"],
+      "likes": 25,
+      "date": "2019-04-03",
+      "price": 60
+    },
+    {
+      "id": 2523434,
+      "photographerId": 195,
+      "title": "Senset on Canals, Venice",
+      "image": "Medias/Marcel/Architecture_Corner_Room.jpg",
+      "typeMedia":"image",
+      "tags": ["travel"],
+      "likes": 53,
+      "date": "2019-05-06",
+      "price": 60
+    },
+    {
+      "id": 95293534,
+      "photographerId": 195,
+      "title": "Mountain and Lake",
+      "image": "Medias/Marcel/Architecture_Dome.jpg",
+      "typeMedia":"image",
+      "tags": ["travel"],
+      "likes": 33,
+      "date": "2019-05-12",
+      "price": 60
+    },
+    {
+      "id": 356234343,
+      "photographerId": 195,
+      "title": "City Bike and Stair, Paris",
+      "image": "Medias/Marcel/Architecture_On_a_hill.jpg",
+      "typeMedia":"image",
+      "tags": ["travel"],
+      "likes": 53,
+      "date": "2019-06-20",
+      "price": 60
+    },
+    {
+      "id": 235234343,
+      "photographerId": 195,
+      "title": "Adventure Door, India",
+      "image": "Medias/Marcel/Travel _Adventure_Door.jpg",
+      "typeMedia":"image",
+      "tags": ["travel"],
+      "likes": 63,
+      "date": "2019-06-26",
+      "price": 60
+    },
+    {
+      "id": 6234234343,
+      "photographerId": 195,
+      "title": "Contrast, St Petersburg",
+      "image": "Medias/Marcel/Travel_Bike_and_Stair.jpg",
+      "typeMedia":"image",
+      "tags": ["architecture"],
+      "likes": 52,
+      "date": "2019-06-30",
+      "price": 60
+    },
+    {
+      "id": 6525666253,
+      "photographerId": 195,
+      "title": "On a Hill, Tibet",
+      "image": "Medias/Marcel/Travel_Bike_and_Stair.jpg",
+      "typeMedia":"image",
+      "tags": ["architecture"],
+      "likes": 63,
+      "date": "2019-07-20",
+      "price": 60
+    },
+    {
+      "id": 98252523433,
+      "photographerId": 195,
+      "title": "Leaning Tower, Pisa",
+      "image": "Medias/Tracy/Fashion_Yellow_Beach.jpg",
+      " typeMedia": "image",
+      "tags": ["architecture"],
+      "likes": 88,
+      "date": "2020-01-05",
+      "price": 60
+    },
+    {
+      "id": 9259398453,
+      "photographerId": 195,
+      "title": "Circle Highways, Buenos Aires",
+      "video": "Medias/Marcel/Architecture_coverr_circle_empty_highway_in_buenos_aires_587740985637.mp4",
+      "typeMedia": "video",
+      "tags": ["architecture"],
+      "likes": 57,
+      "date": "2020-01-20",
+      "price": 65
+    },
+    {
+      "id": 3523523534,
+      "photographerId": 195,
+      "title": "Corner Building and Blue Sky",
+      "image": "Medias/Marcel/Travel_OpenMountain.jpg",
+      "typeMedia":"image",
+      "tags": ["architecture"],
+      "likes": 54,
+      "date": "2020-05-05",
+      "price": 60
+    },
+
+    {
+      "id": 952343423,
+      "photographerId": 930,
+      "title": "Tricks in the Air",
+      "video": "Medias/Ellie Rose/Sport_Tricks_in_the_air.mp4",
+      "typeMedia": "video",
+      "tags": ["sport"],
+      "likes": 150,
+      "date": "2018-02-30",
+      "price": 70
+    },
+    {
+      "id": 235234343,
+      "photographerId": 930,
+      "title": "Climber",
+      "image": "assets/Ellie Rose/Architecture_Horseshoe.jpg",
+      "typeMedia":"image",
+      "tags": ["sport"],
+      "likes": 101,
+      "date": "2018-03-05",
+      "price": 65
+    },
+    {
+      "id": 235343222,
+      "photographerId": 930,
+      "title": "Surfer",
+      "image": "Medias/Ellie Rose/Architecture_Connected_Curves.jpg",
+      "typeMedia":"image",
+      "tags": ["sport"],
+      "likes": 103,
+      "date": "2018-03-10",
+      "price": 70
+    },
+    {
+      "id": 7775342343,
+      "photographerId": 930,
+      "title": "Skier",
+      "image": "Medias/Ellie Rose/Architecture_Cross_Bar.jpg",
+      "typeMedia":"image",
+      "tags": ["sport"],
+      "likes": 77,
+      "date": "2018-04-16",
+      "price": 50
+    },
+    {
+      "id": 9253445784,
+      "photographerId": 930,
+      "title": "Race End",
+      "image": "Medias/Ellie Rose/Architecture_Horseshoe.jpg",
+      "typeMedia":"image",
+      "tags": ["sport"],
+      "likes": 88,
+      "date": "2018-04-22",
+      "price": 65
+    },
+    {
+      "id": 22299394,
+      "photographerId": 930,
+      "title": "Jump!",
+      "image": "Medias/Ellie Rose/sport_water_tunnel.jpg",
+       "typeMedia":"image",
+      "tags": ["sport"],
+      "likes": 95,
+      "date": "2018-04-27",
+      "price": 70
+    },
+    {
+      "id": 3452342633,
+      "photographerId": 930,
+      "title": "White Light",
+      "image": "Medias/Ellie Rose/Architecture_White_Light.jpg",
+       "typeMedia":"image",
+      "tags": ["architecture"],
+      "likes": 52,
+      "date": "2018-05-03",
+      "price": 75
+    },
+    {
+      "id": 939234243,
+      "photographerId": 930,
+      "title": "Water on Modern Building",
+      "image": "Medias/Ellie Rose/Sport_Jump.jpg",
+       "typeMedia":"image",
+      "tags": ["architecture"],
+      "likes": 55,
+      "date": "2018-05-10",
+      "price": 72
+    },
+    {
+      "id": 222959233,
+      "photographerId": 930,
+      "title": "Horseshoe",
+      "image": "Medias/Ellie Rose/Sport_Next_Hold.jpg",
+       "typeMedia":"image",
+      "tags": ["architecture"],
+      "likes": 85,
+      "date": "2018-05-15",
+      "price": 71
+    },
+    {
+      "id": 965933434,
+      "photographerId": 930,
+      "title": "Cross Bar",
+      "image": "Medias/Ellie Rose/Sport_Next_Hold.jpg",
+       "typeMedia":"image",
+      "tags": ["architecture"],
+      "likes": 66,
+      "date": "2018-05-20",
+      "price": 58
+    },
+    {
+      "id": 777723343,
+      "photographerId": 930,
+      "title": "Connected Curves",
+      "image": "Medias/Ellie Rose/Sport_Sky_Cross.jpg",
+       "typeMedia":"image",
+      "tags": ["architecture"],
+      "likes": 79,
+      "date": "2018-05-21",
+      "price": 80
+    }
+  ]
+}
