@@ -114,4 +114,14 @@ html body section article div span {
 }
 .profilePhotographe.active {
   border: 3px solid #901c1c;
+}
+
+@media (max-width: 600px) {
+  header div strong {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
 }/*# sourceMappingURL=style.css.map */
