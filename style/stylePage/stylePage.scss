@@ -482,3 +482,11 @@ select{
   margin-top: 2rem;
   width: 170px;
 }
+
+
+
+@media (max-width: 768px) {
+#sorting{
+  display: none;
+}
+}

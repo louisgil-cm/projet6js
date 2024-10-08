@@ -1,6 +1,6 @@
 @charset "UTF-8";
 html {
-  font-family: "Roboto", sans-serif;
+  font-family: "DM Sans", sans-serif;
 }
 html body {
   margin: 40px;
@@ -406,4 +406,10 @@ select {
   padding: 0.2rem;
   margin-top: 2rem;
   width: 170px;
+}
+
+@media (max-width: 768px) {
+  #sorting {
+    display: none;
+  }
 }/*# sourceMappingURL=stylePage.css.map */

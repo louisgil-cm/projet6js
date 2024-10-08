@@ -1,5 +1,5 @@
 html {
-  font-family: "Roboto", sans-serif;
+  font-family: "DM Sans", sans-serif;
 }
 html a {
   text-decoration: none;
@@ -63,11 +63,12 @@ html body section article {
   padding: 20px;
 }
 html body section article img {
-  width: 200px;
-  height: 200px;
   border-radius: 50%;
+  height: 200px;
   -o-object-fit: cover;
      object-fit: cover;
+  text-decoration: none;
+  width: 200px;
 }
 html body section article h2 {
   color: #d3573c;
@@ -95,6 +96,8 @@ html body section article div span {
   .title1 {
     display: block !important;
     color: #901c1c;
+    font-size: 25px !important;
+    margin-left: 10px;
   }
 }
 @media (max-width: 1024px) {
