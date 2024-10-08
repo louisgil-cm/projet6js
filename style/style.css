@@ -10,50 +10,51 @@ html body {
   justify-content: center;
   flex-direction: column;
 }
-html body header div {
+html header div {
   display: flex;
   align-items: center;
-  gap: 5px;
   justify-content: space-between;
   flex-wrap: wrap;
-  display: flex;
-  justify-content: space-between;
+  gap: 10px;
 }
-html body header div strong {
+html header div strong {
   display: flex;
   align-items: center;
 }
-html body header div strong .title1 {
+html header div strong .title1 {
   display: none;
 }
-html body header div nav .filter-btn {
+html header div nav {
+  display: flex;
+  flex-wrap: wrap;
+}
+html header div nav .filter-btn {
   border: 2px solid #f2f2f2;
   border-radius: 20px;
   font-size: 1rem;
   color: #901c1c;
-  padding: 2px;
-  flex: 1;
-  cursor: pointer;
   padding: 10px;
   cursor: pointer;
   margin: 1px;
   background: transparent;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
-html body header div nav .filter-btn.selected {
+html header div nav .filter-btn.selected {
   background-color: #901c1c;
   color: white;
 }
-html body header div .header__title {
+html header div .header__title {
   color: #901c1c;
   font-size: 24px;
 }
-html body section {
+html section {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
   flex-direction: row;
+  justify-content: center;
 }
-html body section article {
+html section article {
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -62,31 +63,41 @@ html body section article {
   flex: 1 1 calc(30.33% - 20px);
   padding: 20px;
 }
-html body section article img {
+html section article img {
   border-radius: 50%;
   height: 200px;
+  width: 200px;
   -o-object-fit: cover;
      object-fit: cover;
-  text-decoration: none;
-  width: 200px;
 }
-html body section article h2 {
+html section article h2 {
   color: #d3573c;
+  text-align: center;
 }
-html body section article h3 {
+html section article h3 {
   font-size: 1rem;
   color: #d3573c;
+  text-align: center;
 }
-html body section article span {
+html section article span {
   margin-bottom: 10px;
+  text-align: center;
 }
-html body section article div span {
+html section article div {
+  display: flex;
+  flex-wrap: wrap;
+}
+html section article div span {
   font-size: 1rem;
   margin-right: 5px;
   padding: 6px;
   border: 2px solid #f2f2f2;
   border-radius: 15px;
   color: #d3573c;
+}
+
+.profilePhotographe.active {
+  border: 3px solid #901c1c;
 }
 
 @media screen and (max-width: 1115px) {
@@ -112,10 +123,6 @@ html body section article div span {
     flex: 1 1 100%;
   }
 }
-.profilePhotographe.active {
-  border: 3px solid #901c1c;
-}
-
 @media (max-width: 600px) {
   header div strong {
     display: flex;
@@ -123,5 +130,8 @@ html body section article div span {
     align-items: center;
     justify-content: center;
     width: 100%;
+  }
+  .filter-btn {
+    margin-bottom: 10px;
   }
 }/*# sourceMappingURL=style.css.map */

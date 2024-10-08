@@ -1,89 +1,106 @@
 html {
     font-family: "DM Sans", sans-serif;
+
     a {
         text-decoration: none;
     }
+
     body {
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        header {
-           div{
+    }
+
+    header {
+        div {
             display: flex;
             align-items: center;
-            gap: 5px;
             justify-content: space-between;
             flex-wrap: wrap;
-            display:flex;
-            justify-content: space-between;
-            strong{
+            gap: 10px;
+
+            strong {
                 display: flex;
                 align-items: center;
-                .title1{                    
+
+                .title1 {
                     display: none;
                 }
-            }  
-            nav{
-               .filter-btn{
+            }
+
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                .filter-btn {
                     border: 2px solid #f2f2f2;
                     border-radius: 20px;
                     font-size: 1rem;
                     color: #901c1c;
-                    padding: 2px;
-                    flex: 1;
-                    cursor: pointer;
-                    padding: 10px;
+                    padding: 10px; 
                     cursor: pointer;
                     margin: 1px;
                     background: transparent;
+                    transition: background-color 0.3s ease, color 0.3s ease; 
                 }
+
                 .filter-btn.selected {
                     background-color: #901c1c;
                     color: white;
-                  }
-
+                }
             }
+
             .header__title {
                 color: #901c1c;
                 font-size: 24px;
-             }
-            
-           }
+            }
         }
-        section{
+    }
+
+    section {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center; 
+
+        article {
+            cursor: pointer;
             display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            flex-direction: row;
-            article{
-                cursor: pointer;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                flex: 1 1 calc(30.33% - 20px);
-                padding: 20px;
-                img{
-                    border-radius: 50%;
-                    height: 200px;
-                    object-fit: cover;
-                    text-decoration: none;
-                    width: 200px;
-                }
-                h2{
-                    color: #d3573c;
-                }
-            h3{
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex: 1 1 calc(30.33% - 20px); 
+            padding: 20px;
+
+            img {
+                border-radius: 50%;
+                height: 200px;
+                width: 200px;
+                object-fit: cover;
+            }
+
+            h2 {
+                color: #d3573c;
+                text-align: center; 
+            }
+
+            h3 {
                 font-size: 1rem;
                 color: #d3573c;
+                text-align: center;
             }
-            span{
+
+            span {
                 margin-bottom: 10px;
+                text-align: center; 
             }
-            
-            div{
-                span{
+
+            div {
+                display: flex; 
+                flex-wrap: wrap; 
+
+                span {
                     font-size: 1rem;
                     margin-right: 5px;
                     padding: 6px;
@@ -92,56 +109,53 @@ html {
                     color: #d3573c;
                 }
             }
-            }
         }
-       
     }
 }
 
-
-
-
+.profilePhotographe.active {
+    border: 3px solid #901c1c;
+}
 
 @media screen and (max-width: 1115px) {
     .header__title {
         display: none;
     }
-    .title1{
-    display: block !important;
-    color: #901c1c;
-    font-size: 25px !important;
-    margin-left: 10px;
+
+    .title1 {
+        display: block !important;
+        color: #901c1c;
+        font-size: 25px !important;
+        margin-left: 10px;
     }
-   
-  
-  }
+}
 
-
-  @media (max-width: 1024px) {
-    section  article{
-      width: 48%; 
-      flex: 1 1 calc(48% - 20px); 
+@media (max-width: 1024px) {
+    section article {
+        width: 48%;
+        flex: 1 1 calc(48% - 20px); 
     }
-  }
+}
 
-  
-  @media (max-width: 768px) {
-    section  article{
-      width: 100%; 
-      flex: 1 1 100%; 
+@media (max-width: 768px) {
+    section article {
+        width: 100%;
+        flex: 1 1 100%;
     }
-  }
-
-  .profilePhotographe.active {
-    border: 3px solid #901c1c;
 }
 
 @media (max-width: 600px) {
-    header div strong{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
+    header div strong {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
     }
+
+   
+
+    .filter-btn {
+        margin-bottom: 10px; 
     }
+}
