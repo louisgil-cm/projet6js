@@ -8,7 +8,7 @@
       "tags": ["portrait", "events", "voyage", "animals"],
       "tagline": "Voir le beau dans le quotidien",
       "price": 400,
-      "portrait": "assets/Mimi/Portrait_Nora.jpg"
+      "portrait": "Medias/Mimi/Portrait_Nora.jpg"
     },
     {
       "name": "Ellie-Rose Wilkens",
@@ -18,7 +18,7 @@
       "tags": ["sports", "architecture"],
       "tagline": "Capturer des compositions complexes",
       "price": 250,
-     "portrait": "assets/Ellie Rose/Architecture_Horseshoe.jpg"
+     "portrait": "Medias/Ellie Rose/EllieRoseWilkens.jpg"
     },
     {
       "name": "Tracy Galindo",
@@ -28,7 +28,7 @@
       "tags": ["art", "fashion", "événements"],
       "tagline": "Photographe freelance",
       "price": 500,
-       "portrait": "assets/Tracy/Fashion_Urban_Jungle.jpg"
+       "portrait": "Medias/Tracy/Fashion_Urban_Jungle.jpg"
     },
     {
       "name": "Nabeel Bradford",
@@ -38,7 +38,7 @@
       "tags": ["travel", "portrait"],
       "tagline": "Toujours aller de l'avant",
       "price": 350,
-      "portrait": "assets/Nabeel/Travel_Outdoor_Baths.jpg"
+      "portrait": "Medias/Nabeel/NabeelBradford.jpg"
     },
     {
       "name": "Rhode Dubois",
@@ -48,7 +48,7 @@
       "tags": ["sport", "fashion", "events", "animals"],
       "tagline": "Je crée des souvenirs",
       "price": 275,
-      "portrait": "assets/Rhode/Fashion_Melody_Red_on_Stripes.jpg"
+      "portrait": "Medias/Rhode/RhodeDubois.jpg"
     },
     {
       "name": "Marcel Nikolic",
@@ -58,7 +58,7 @@
       "tags": ["travel", "architecture"],
       "tagline": "Toujours à la recherche de la photo",
       "price": 300,
-      "portrait": "assets/Marcel/Travel_Tower.jpg"
+      "portrait": "Medias/Marcel/MarcelNikolic.jpg"
     }
   ],
   "media": [
@@ -377,7 +377,7 @@
       "id": 623534343,
       "photographerId": 243,
       "title": "Lonesome",
-      "image": "Medias/Mimi/Event_BenevidesWedding.jpg",
+      "image": "Medias/Mimi/Portrait_Background.jpg",
       "typeMedia":"image",
       "tags": ["travel"],
       "likes": 88,
@@ -448,7 +448,7 @@
       "id": 23523434,
       "photographerId": 243,
       "title": "Benevides Wedding",
-      "image": "assets/Mimi/Event_BenevidesWedding.jpg",
+      "image": "Medias/Mimi/Event_BenevidesWedding.jpg",
       "tags": ["events"],
       "likes": 77,
       "date": "2019-06-28",
@@ -469,7 +469,7 @@
       "id": 95234343,
       "photographerId": 243,
       "title": "Rainbow Bird",
-      "image": "assets/Mimi/Portrait_Background.jpg",
+      "image": "Medias/Mimi/Animals_Rainbow.jpg",
       "tags": ["animals"],
       "likes": 59,
       "date": "2019-07-02",
@@ -602,7 +602,7 @@
       "id": 235234343,
       "photographerId": 930,
       "title": "Climber",
-      "image": "assets/Ellie Rose/Architecture_Horseshoe.jpg",
+      "image": "Medias/Ellie Rose/Architecture_Horseshoe.jpg",
       "typeMedia":"image",
       "tags": ["sport"],
       "likes": 101,
@@ -635,7 +635,7 @@
       "id": 9253445784,
       "photographerId": 930,
       "title": "Race End",
-      "image": "Medias/Ellie Rose/Architecture_Horseshoe.jpg",
+      "image": "Medias/Ellie Rose/Sport_Race_End.jpg",
       "typeMedia":"image",
       "tags": ["sport"],
       "likes": 88,

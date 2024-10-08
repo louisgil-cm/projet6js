@@ -1,6 +1,8 @@
 html {
-    font-family: 'Roboto', sans-serif;
-    margin: 0px 10px 0px 10px;
+  font-family: "DM Sans", sans-serif;
+    body{
+      margin: 40px;
+    }
 }
 
 .filtres {
@@ -20,14 +22,10 @@ html {
     }
 }
 
-header img {
-    height: 100px;
-    width: 200px;
-}
+
 
 #photographerDetails {
-    margin-left: 10px;
-    margin-bottom: 20px;
+    padding: 20px;
     display: flex;
     justify-content: space-between;
     background-color: #fafafa;
@@ -61,13 +59,19 @@ header img {
     }
 
     img {
-        width: 220px;
-        height: 220px;
-        border-radius: 50%;
-        margin-right: 20px;
-        margin-top: 20px;
+      border-radius: 50%;
+      height: 120px;
+      object-fit: cover;
+      width: 120px;
     }
 
+}
+
+#photographerGallery .media div video:hover,
+#photographerGallery .media div img:hover {
+    transform: scale(1.05); 
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s; 
 }
 #photographerGallery {
     .media {
@@ -136,6 +140,13 @@ header img {
     }
   
     .lightbox {
+      animation-duration: 0.5s;
+      animation-timing-function: ease;
+      animation-delay: 0s;
+      animation-iteration-count: 1;
+      animation-direction: normal;
+      animation-fill-mode: none;
+      animation-name: lightbonIn;
       display: none;
       position: fixed;
       justify-content: center;
@@ -145,15 +156,21 @@ header img {
       height: 100%;
       top: 0;
       left: 0;
+      background-color: rgba(255, 253, 253, 0.9);
+
     }
   
     .lightboxContent {
-      position: relative;
-      max-height: 90vh;
-      display: flex;
       align-items: center;
+      color: #911c1c;
+      display: flex;
+      flex-direction: column;
       justify-content: center;
-      border-radius: 10px;
+      margin-left: 50px;
+      margin-right: 50px;
+      min-height: 100vh;
+      padding: 0rem;
+      text-align: center;
   
       img,
       video {
@@ -185,11 +202,7 @@ header img {
       }
     }
   
-    .image-container img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
+
   
     .arrow {
       position: absolute;
@@ -252,10 +265,12 @@ header img {
         height: 7vh;
         padding: 5px;
         border-radius: 5px;
+        cursor: pointer;
     }
 
     .modal {
         display: none;
+        overflow:auto ;
         position: fixed;
         z-index: 1;
         left: 0;
@@ -269,14 +284,27 @@ header img {
 
     /* Contenu/boîte du Modal */
     .modalContent {
-        background-color: #d3573c;
-        margin: 15% auto;
-        padding: 40px;
-        border: 1px solid #888;
-        border-radius: 8px;
-        width: 30%;
-        height: 60vh;
-    }
+      background-color: #d3573c;
+      border: 1px solid #888;
+      border-radius: 8px;
+      width: 40%; 
+      margin: auto;
+      padding: 0 2rem 9rem 2rem;
+  }
+  
+ 
+  @media (max-width: 768px) {
+      .modalContent {
+          width: 45%; 
+      }
+  }
+  
+  @media (max-width: 480px) {
+      .modalContent {
+          padding: 20px; 
+      }
+  }
+  
     .close {
         color: #aaa;
         float: right;
@@ -354,11 +382,17 @@ header img {
 
 }
 #totalLikes{
-    position: absolute;
-    right: 0px;
-    background-color: #d3573c;
-    padding: 5px;
-    margin-top: -40px;
+  align-items: center;
+  background-color: #DB8876;
+  bottom: 0;
+  display: flex;
+  font-size: 24px;
+  height: 69px;
+  justify-content: space-between;
+  padding: 0 2rem;
+  position: fixed;
+  right: 3rem;
+  width: 276px;
 }
 
 
@@ -386,12 +420,65 @@ header img {
   }
 
 
-  @media (max-width: 768px) {
-   .button{
-    button{
-      position: fixed;
-      top: 500px;
-      left: 110px;
-     }
-   }
+    @media (max-width: 768px) {
+      .button {
+        button {
+          background-color: #911c1c;
+          border-radius: 5px;
+          border: none;
+          bottom: 1rem;
+          color: white;
+          cursor: pointer;
+          font-size: 23.44px;
+          height: 80px;
+          left: 50%;
+          margin-left: -150px;
+          position: fixed;
+          width: 300px;
+          z-index: 9999;
+        }
+      }
+      #totalLikes{
+        display: none;
+      }
+    }
+  
+
+  // effet sur la  l'image ou sur la video  au passage de la souris
+
+  .galleryItem {
+    position: relative;
+    display: inline-block;
   }
+  
+  #photoHover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+  }
+  
+  .galleryItem:hover #photoHover{
+    display: flex; 
+  }
+
+
+select{
+  background-color: #911c1c;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  font-size: 18px;
+  height: 59px;
+  padding: 0.2rem;
+  margin-top: 2rem;
+  width: 170px;
+}

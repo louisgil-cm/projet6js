@@ -1,8 +1,9 @@
 // Variable pour stocker les données des photographes après leur premier chargement
 let cachedPhotographers = [];
+let selectedTags = [];
 
 // Récupération des données provenant du fichier JSON
-async function loadData(filterTag = "") {
+async function loadData() {
   try {
     // Si les données ne sont pas encore chargées, elles sont chargées une seule fois ici.
     if (cachedPhotographers.length === 0) {
@@ -11,52 +12,87 @@ async function loadData(filterTag = "") {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
       const data = await response.json();
-      cachedPhotographers = data.photographers; // Stocker seulement les photographes
+      cachedPhotographers = data.photographers; 
     }
 
-    // Si un filtre est appliqué, les photographes sont triés par tag
-    const filteredPhotographers = filterTag
-      ? cachedPhotographers.filter(photographer => photographer.tags.includes(filterTag))
-      : cachedPhotographers;
-
-    // J'affiche les photographes filtrés (ou tous si pas de filtre)
-    displayPhotographers(filteredPhotographers);
+    // J'affiche tous les photographes
+    displayPhotographers(cachedPhotographers);
   } catch (error) {
     console.error(error);
   }
 }
 
-// les Elements du header
-// Ajout du header au DOM
-let headerBloc = document.querySelector("header");
-let headerElement = `
+// Ajout du header et des boutons de filtre 
+document.querySelector("header").innerHTML = `
   <div>
     <strong>
-      <img class="header__logo" src="assets/logo/logo.png" alt="logo FishEye">
+      <img class="header__logo" src="Medias/logo/logo.png" alt="logo FishEye">
       <h1 class="title1">Nos photographes</h1>
     </strong>
     <nav>
-      <button id="filterArt" tabindex="0">#Art</button>
-      <button id="filterPortrait" tabindex="0">#Portrait</button>
-      <button id="filterArchitecture" tabindex="0">#Architecture</button>
-      <button id="filterVoyage" tabindex="0">#Voyage</button>
-      <button id="filterSport" tabindex="0">#Sport</button>
-      <button id="filterAnimaux" tabindex="0">#Animaux</button>
-      <button id="filterEvenements" tabindex="0">#Événements</button>
-      <button id="filterMode" tabindex="0">#Mode</button>
+      <button class="filter-btn" data-tag="art">#Art</button>
+      <button class="filter-btn" data-tag="portrait">#Portrait</button>
+      <button class="filter-btn" data-tag="architecture">#Architecture</button>
+      <button class="filter-btn" data-tag="voyage">#Voyage</button>
+      <button class="filter-btn" data-tag="sport">#Sport</button>
+      <button class="filter-btn" data-tag="animaux">#Animaux</button>
+      <button class="filter-btn" data-tag="evenements">#Événements</button>
+      <button class="filter-btn" data-tag="mode">#Mode</button>
     </nav>
     <h1 class="header__title">Nos photographes</h1>
   </div>
 `;
-headerBloc.innerHTML = headerElement;
 
+// Gestion de la sélection des filtres
+function setupFilterButtons() {
+  const filterButtons = document.querySelectorAll('.filter-btn');
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const tag = this.getAttribute('data-tag');
+
+      // Vérifier si le tag est déjà sélectionné
+      if (selectedTags.includes(tag)) {
+        // Si le tag est sélectionné, le retirer de la liste
+        selectedTags = selectedTags.filter(t => t !== tag);
+        this.classList.remove('selected');
+      } else {
+        // Ajouter le tag sélectionné
+        selectedTags.push(tag);
+        this.classList.add('selected');
+      }
+
+      // Mettre à jour l'affichage des photographes
+      filterPhotographers();
+    });
+  });
+}
+
+// Fonction pour filtrer les photographes
+function filterPhotographers() {
+  const filteredPhotographers = cachedPhotographers.filter(photographer => {
+    // Si aucun tag n'est sélectionné, tous les photographes sont affichés
+    if (selectedTags.length === 0) {
+      return true;
+    }
+
+    // Vérifier si le photographe a au moins un des tags sélectionnés
+    return photographer.tags.some(tag => selectedTags.includes(tag.toLowerCase()));
+  });
+
+  // Afficher les photographes filtrés
+  displayPhotographers(filteredPhotographers);
+}
 
 // Création du profile d'un photographe
 function createPhotographerCard(photographer) {
   const photographersElement = document.createElement("article");
   photographersElement.setAttribute('tabindex', '0');
+  photographersElement.classList.add("profilePhotographe")
+   photographersElement.addEventListener('click', function () {
+    this.classList.toggle('active');
+  });
 
-  // Création des balises
   const imageElement = document.createElement("img");
   const nomElement = document.createElement("h2");
   const villeElement = document.createElement("h3");
@@ -64,14 +100,12 @@ function createPhotographerCard(photographer) {
   const prixElement = document.createElement("span");
   const tagsContainer = createTagsContainer(photographer.tags);
 
-  // Remplissage des éléments avec les données du photographe
   imageElement.src = photographer.portrait;
   nomElement.innerText = photographer.name;
   villeElement.innerText = photographer.city;
   taglineElement.innerText = photographer.tagline;
   prixElement.innerText = `${photographer.price} €/jour`;
 
-  // Ajout des éléments à la carte du photographe
   photographersElement.appendChild(imageElement);
   photographersElement.appendChild(nomElement);
   photographersElement.appendChild(villeElement);
@@ -79,25 +113,21 @@ function createPhotographerCard(photographer) {
   photographersElement.appendChild(prixElement);
   photographersElement.appendChild(tagsContainer);
 
-  // Lien de redirection vers la page d'accueil
-  imageElement.addEventListener("click", () => {
+  photographersElement.addEventListener("click", () => {
     window.location.href = `photographer.html?id=${photographer.id}`;
   });
   
-  return photographersElement; // Retourne la carte du photographe
+  return photographersElement;
 }
+
 
 // Création du conteneur de tags
 function createTagsContainer(tags) {
   const tagsContainer = document.createElement("div");
 
-  // Ajout des tags dans des balises span
   tags.forEach(tag => {
     const tagElement = document.createElement("span");
-    tagElement.innerText = "#" + tag;
-
-    // Ajouter un événement de filtrage lorsqu'on clique sur le tag
-    tagElement.addEventListener("click", () => filterPhotographers(tag));
+    tagElement.innerText = `#${tag}`;
     tagsContainer.appendChild(tagElement);
   });
 
@@ -107,50 +137,14 @@ function createTagsContainer(tags) {
 // Affichage des photographes
 function displayPhotographers(photographers) {
   const sectionPhotographers = document.querySelector("body main section");
-  // Vider la section avant d'ajouter les photographes
   sectionPhotographers.innerHTML = '';
 
   photographers.forEach(photographer => {
-    // Créer la carte pour chaque photographe
     const photographerCard = createPhotographerCard(photographer);
     sectionPhotographers.appendChild(photographerCard);
   });
 }
 
-// Filtrer les photographes par tags
-function filterPhotographers(tag) {
-  // Recharger les données des photographes et filtrer par tag
-  loadData(tag);
-}
-
-// Appel de la fonction pour charger les photographes
+// Appel des fonctions pour charger les photographes et configurer les boutons de filtre
 loadData();
-
-// La sélection des boutons de filtrage
-const filterArtBtn = document.getElementById("filterArt");
-const filterPortraitBtn = document.getElementById("filterPortrait");
-const filterArchitectureBtn = document.getElementById("filterArchitecture");
-const filterVoyageBtn = document.getElementById("filterVoyage");
-const filterSportBtn = document.getElementById("filterSport");
-const filterAnimauxBtn = document.getElementById("filterAnimaux");
-const filterEvenementsBtn = document.getElementById("filterEvenements");
-const filterModeBtn = document.getElementById("filterMode");
-
-// Les événements pour écouter chaque bouton de filtrage
-filterArtBtn.addEventListener("click", () => filterPhotographers('art'));
-filterPortraitBtn.addEventListener("click", () => filterPhotographers('portrait'));
-filterArchitectureBtn.addEventListener("click", () => filterPhotographers('architecture'));
-filterVoyageBtn.addEventListener("click", () => filterPhotographers('voyage'));
-filterSportBtn.addEventListener("click", () => filterPhotographers('sport'));
-filterAnimauxBtn.addEventListener("click", () => filterPhotographers('animaux'));
-filterEvenementsBtn.addEventListener("click", () => filterPhotographers('événements'));
-filterModeBtn.addEventListener("click", () => filterPhotographers('mode'));
-
-
-
-
-
-
-
-
-
+setupFilterButtons();

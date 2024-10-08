@@ -98,15 +98,16 @@ function afficherGaleriePhotographe(photographerMedia = null) {
 
     photographerMedia.forEach(media => {
         const mediaElement = document.createElement("div");
+        mediaElement.classList.add("galleryItem");
        
 
         let likesContainer, likesElement, likeButton;
 
         if (media.typeMedia === "video") {
             const videoElement = document.createElement("video");
-            mediaElement.classList.add("galleryItem");
             videoElement.src = media.video;
             videoElement.controls = true;
+          
 
             const footerElement = document.createElement("footer");
             const titleElement = document.createElement("h3");
@@ -130,7 +131,6 @@ function afficherGaleriePhotographe(photographerMedia = null) {
 
         } else {
             const imageElement = document.createElement("img");
-            mediaElement.classList.add("galleryItem");
             imageElement.src = media.image;
             imageElement.alt = media.title;
 
@@ -180,15 +180,10 @@ document.getElementById("sortOptions").addEventListener("change", function () {
     trierMedias(critere); 
 });
 
-
 // Fonction pour l'affichage du total des likes
 function TotalLikesPhotographes() {
-    // Trouver le photographe par son ID
     const photographer = photographersData.find(p => p.id === photographerId);
-
     const photographerMedia = recupererMediasPhotographe();
-    
-    // Initialisation du nombre total des likes
     let totalLikes = 0;
 
     for (let i = 0; i < photographerMedia.length; i++) {
@@ -207,75 +202,61 @@ function attacherLightboxEvents() {
 
     const galleryItems = document.querySelectorAll("#photographerGallery .galleryItem");
 
-    // ajout des evenements pour chaque element de la galerie
     galleryItems.forEach((item, index) => {
         item.addEventListener('click', () => {
             currentIndex = index;
             openLightBox(item.cloneNode(true));
         });
 
-        // Trouver le bouton "like" à l'intérieur de l'élément et empêcher la propagation du clic
         const likeButton = item.querySelector('button');
         if (likeButton) {
             likeButton.addEventListener('click', (event) => {
-                event.stopPropagation();  // Empêche la lightbox de s'ouvrir
+                event.stopPropagation();
                 const likesElement = item.querySelector('.likes strong');
-                Likes(mediaData[index], likeButton, likesElement);  // Gérer le like
+                Likes(mediaData[index], likeButton, likesElement);
             });
         }
     });
 
-    // Ouverture de la lightbox
     function openLightBox(content) {
         lightboxContent.innerHTML = '';  
         lightboxContent.appendChild(content); 
         lightbox.style.display = 'flex'; 
         
-        // Ajout des événements de like dans la lightbox
         const likeButton = lightboxContent.querySelector('button');
         const likesElement = lightboxContent.querySelector('.likes strong');
         Likes(mediaData[currentIndex], likeButton, likesElement);
     }
 
-    // Fermeture de la lightbox
     const closeBtn = document.getElementById("close");
     closeBtn.addEventListener('click', () => {
         lightbox.style.display = "none";
     });
 
-    // Passer à l'image/vidéo suivante
     document.querySelector('.right').addEventListener('click', () => {
         currentIndex = (currentIndex + 1) % galleryItems.length;
         openLightBox(galleryItems[currentIndex].cloneNode(true));
     });
 
-    // Passer à l'image/vidéo précédente
     document.querySelector('.left').addEventListener('click', () => {
         currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
         openLightBox(galleryItems[currentIndex].cloneNode(true));
     });
 }
 
-
 function gererModal(modalId, boutonId, closeClass) {
-    // Obtenir le modal
     let modal = document.getElementById(modalId);
-    // Obtenir le bouton qui ouvre le modal
     let btn = document.getElementById(boutonId);
-    // Obtenir l'élément <span> qui ferme le modal
     let span = document.getElementsByClassName(closeClass)[0];
 
-    // Lorsque l'utilisateur clique sur le bouton, ouvrir le modal
     btn.onclick = function () {
         modal.style.display = "block";
     };
 
-    // Lorsque l'utilisateur clique sur <span> (x), fermer le modal
     span.onclick = function () {
         modal.style.display = "none";
     };
 
-    // Fermer le modal si l'utilisateur clique en dehors de celui-ci
     window.onclick = function (event) {
         if (event.target == modal) {
             modal.style.display = "none";
@@ -283,21 +264,5 @@ function gererModal(modalId, boutonId, closeClass) {
     };
 }
 
-// Appel de la fonction
 gererModal("myModal", "myBtn", "close");
-
-
 loadPhotographersData();
-
-
-
-
-
-
-
-
-
-
-
-
-
