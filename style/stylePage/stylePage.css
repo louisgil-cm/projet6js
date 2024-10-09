@@ -496,4 +496,7 @@ select {
   #sorting {
     display: none;
   }
+}
+textarea {
+  resize: none;
 }/*# sourceMappingURL=stylePage.css.map */

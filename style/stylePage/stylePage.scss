@@ -356,14 +356,12 @@ html {
       }
     }
     
-   
     .lightboxContent {
       img, video{
         width: 300px;
         height: 300px;
       }
       video{
-      
         height: 400px;
       }
   }
@@ -614,5 +612,9 @@ select{
 #sorting{
   display: none;
 }
+}
+
+textarea{
+  resize: none; 
 }
 

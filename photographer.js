@@ -264,5 +264,31 @@ function gererModal(modalId, boutonId, closeClass) {
     };
 }
 
+
+document.getElementById('myForm').addEventListener('submit', function(event) {
+    // Empêcher le rechargement de la page
+    event.preventDefault();
+
+    // Récupérer les valeurs des champs
+    const prenom = document.getElementById('prenom').value;
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('commentaire').value;
+
+    // Afficher les valeurs dans la console
+    console.log('Prénom:', prenom);
+    console.log('Nom:', name);
+    console.log('Email:', email);
+    console.log('Message:', message);
+
+    // Réinitialiser le formulaire
+    document.getElementById('myForm').reset();
+});
+
 gererModal("myModal", "myBtn", "close");
 loadPhotographersData();
+
+
+
+
+

@@ -33,11 +33,11 @@ document.querySelector("header").innerHTML = `
       <button class="filter-btn" data-tag="art">#Art</button>
       <button class="filter-btn" data-tag="portrait">#Portrait</button>
       <button class="filter-btn" data-tag="architecture">#Architecture</button>
-      <button class="filter-btn" data-tag="voyage">#Voyage</button>
+      <button class="filter-btn" data-tag="travel">#Travel</button>
       <button class="filter-btn" data-tag="sport">#Sport</button>
-      <button class="filter-btn" data-tag="animaux">#Animaux</button>
-      <button class="filter-btn" data-tag="evenements">#Événements</button>
-      <button class="filter-btn" data-tag="mode">#Mode</button>
+      <button class="filter-btn" data-tag="animals">#Animals</button>
+      <button class="filter-btn" data-tag="events">#events</button>
+      <button class="filter-btn" data-tag="fashion">#Fashion</button>
     </nav>
     <h1 class="header__title">Nos photographes</h1>
   </div>
@@ -76,8 +76,8 @@ function filterPhotographers() {
       return true;
     }
 
-    // Vérifier si le photographe a au moins un des tags sélectionnés
-    return photographer.tags.some(tag => selectedTags.includes(tag.toLowerCase()));
+    // Vérifier si le photographe a tous les tags sélectionnés
+    return selectedTags.every(tag => photographer.tags.includes(tag.toLowerCase()));
   });
 
   // Afficher les photographes filtrés
@@ -89,7 +89,7 @@ function createPhotographerCard(photographer) {
   const photographersElement = document.createElement("article");
   photographersElement.setAttribute('tabindex', '0');
   photographersElement.classList.add("profilePhotographe")
-   photographersElement.addEventListener('click', function () {
+  photographersElement.addEventListener('click', function () {
     this.classList.toggle('active');
   });
 
@@ -119,7 +119,6 @@ function createPhotographerCard(photographer) {
   
   return photographersElement;
 }
-
 
 // Création du conteneur de tags
 function createTagsContainer(tags) {
