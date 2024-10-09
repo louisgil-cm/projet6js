@@ -212,41 +212,81 @@ html body {
   cursor: pointer;
   color: #901c1c;
 }
-@media only screen and (max-width: 1115px) {
+@media (max-width: 1115px) {
   #photographerGallery .left {
-    left: 25% !important;
+    left: 28%;
   }
   #photographerGallery .right {
-    right: 25% !important;
+    right: 28%;
   }
   #photographerGallery .close {
-    right: 25% !important;
+    right: 28%;
   }
 }
-@media only screen and (max-width: 768px) {
-  #photographerGallery .lightboxContent {
-    margin: 0 20px;
+@media (max-width: 1060px) {
+  #photographerGallery .left {
+    left: 22%;
   }
-  #photographerGallery .left,
   #photographerGallery .right {
-    font-size: 1.5rem;
-    padding: 5px;
+    right: 22%;
   }
   #photographerGallery .close {
-    font-size: 1.5rem;
+    right: 22%;
   }
 }
-@media only screen and (max-width: 480px) {
-  #photographerGallery .lightboxContent {
-    margin: 0 10px;
+@media (max-width: 845px) {
+  #photographerGallery .left {
+    left: 20%;
   }
-  #photographerGallery .left,
   #photographerGallery .right {
-    font-size: 1.2rem;
-    padding: 5px;
+    right: 20%;
   }
   #photographerGallery .close {
-    font-size: 1.2rem;
+    right: 20%;
+  }
+}
+@media (max-width: 782px) {
+  #photographerGallery .left {
+    left: 16%;
+  }
+  #photographerGallery .right {
+    right: 16%;
+  }
+  #photographerGallery .close {
+    right: 16%;
+  }
+}
+@media (max-width: 702px) {
+  #photographerGallery .left {
+    left: 10%;
+  }
+  #photographerGallery .right {
+    right: 10%;
+  }
+  #photographerGallery .close {
+    right: 10%;
+  }
+}
+@media (max-width: 600px) {
+  #photographerGallery .left {
+    left: 6%;
+  }
+  #photographerGallery .right {
+    right: 6%;
+  }
+  #photographerGallery .close {
+    right: 6%;
+  }
+}
+@media (max-width: 600px) {
+  #photographerGallery .left {
+    left: 0%;
+  }
+  #photographerGallery .right {
+    right: 0%;
+  }
+  #photographerGallery .close {
+    right: 0%;
   }
 }
 
