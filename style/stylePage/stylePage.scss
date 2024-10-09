@@ -157,40 +157,46 @@ html {
       top: 0;
       left: 0;
       background-color: rgba(255, 253, 253, 0.9);
-
     }
-  
+    
     .lightboxContent {
-      align-items: center;
-      color: #911c1c;
       display: flex;
       flex-direction: column;
+      align-items: center;
       justify-content: center;
-      margin-left: 50px;
-      margin-right: 50px;
+      margin: 0 50px;
       min-height: 100vh;
-      padding: 0rem;
+      padding: 0;
       text-align: center;
-  
-      img,
-      video {
-        width: 400px;
-        height: 400px;
+      color: #911c1c;
+    
+      img {
         background-position: center;
         border-radius: 10px;
+        width: 400px;
+        height: 400px;
+        margin-top: 110px;
       }
-  
+    
+      video {
+        background-position: center;
+        border-radius: 10px;
+        width: 400px;
+        height: 600px;
+        margin-top: -50px;
+      }
+    
       footer {
         display: flex;
         align-items: center;
         justify-content: space-between;
         color: #901c1c;
-  
+    
         span {
           display: flex;
           gap: 10px;
           align-items: center;
-  
+    
           button {
             border: none;
             background: transparent;
@@ -201,14 +207,11 @@ html {
         }
       }
     }
-  
-
-  
+    
     .arrow {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      color: white;
       font-size: 2rem;
       padding: 10px;
       cursor: pointer;
@@ -217,25 +220,75 @@ html {
       background: none;
       border: none;
     }
-  
+    
     .left {
       left: 32%;
     }
-  
+    
     .right {
       right: 32%;
     }
-  
+    
     .close {
       position: absolute;
       top: 105px;
       right: 32%;
-      color: #901c1c;
-      border: none;
       font-size: 2rem;
       background: none;
+      border: none;
       cursor: pointer;
+      color: #901c1c;
     }
+    
+    /* Responsive adjustments */
+    @media only screen and (max-width: 1115px) {
+      
+      .left {
+        left: 25% !important;
+      }
+    
+      .right {
+        right: 25% !important;
+      }
+    
+      .close {
+        right: 25% !important;
+      }
+    }
+    
+    @media only screen and (max-width: 768px) {
+      
+      .lightboxContent {
+        margin: 0 20px;
+      }
+    
+      .left,
+      .right {
+        font-size: 1.5rem;
+        padding: 5px;
+      }
+    
+      .close {
+        font-size: 1.5rem;
+      }
+    }
+    
+    @media only screen and (max-width: 480px) {
+      .lightboxContent {
+        margin: 0 10px;
+      }
+    
+      .left,
+      .right {
+        font-size: 1.2rem;
+        padding: 5px;
+      }
+    
+      .close {
+        font-size: 1.2rem;
+      }
+    }
+    
   }
   
   
@@ -444,31 +497,6 @@ html {
     }
   
 
-  // effet sur la  l'image ou sur la video  au passage de la souris
-
-  .galleryItem {
-    position: relative;
-    display: inline-block;
-  }
-  
-  #photoHover {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5em;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.7);
-    display: none;
-  }
-  
-  .galleryItem:hover #photoHover{
-    display: flex; 
-  }
 
 
 select{

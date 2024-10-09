@@ -63,6 +63,9 @@ html body {
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
+#photographerGallery {
+  /* Responsive adjustments */
+}
 #photographerGallery .media {
   display: flex;
   gap: 20px;
@@ -139,23 +142,29 @@ html body {
   background-color: rgba(255, 253, 253, 0.9);
 }
 #photographerGallery .lightboxContent {
-  align-items: center;
-  color: #911c1c;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
-  margin-left: 50px;
-  margin-right: 50px;
+  margin: 0 50px;
   min-height: 100vh;
-  padding: 0rem;
+  padding: 0;
   text-align: center;
+  color: #911c1c;
 }
-#photographerGallery .lightboxContent img,
-#photographerGallery .lightboxContent video {
-  width: 400px;
-  height: 400px;
+#photographerGallery .lightboxContent img {
   background-position: center;
   border-radius: 10px;
+  width: 400px;
+  height: 400px;
+  margin-top: 110px;
+}
+#photographerGallery .lightboxContent video {
+  background-position: center;
+  border-radius: 10px;
+  width: 400px;
+  height: 600px;
+  margin-top: -50px;
 }
 #photographerGallery .lightboxContent footer {
   display: flex;
@@ -179,7 +188,6 @@ html body {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  color: white;
   font-size: 2rem;
   padding: 10px;
   cursor: pointer;
@@ -198,11 +206,48 @@ html body {
   position: absolute;
   top: 105px;
   right: 32%;
-  color: #901c1c;
-  border: none;
   font-size: 2rem;
   background: none;
+  border: none;
   cursor: pointer;
+  color: #901c1c;
+}
+@media only screen and (max-width: 1115px) {
+  #photographerGallery .left {
+    left: 25% !important;
+  }
+  #photographerGallery .right {
+    right: 25% !important;
+  }
+  #photographerGallery .close {
+    right: 25% !important;
+  }
+}
+@media only screen and (max-width: 768px) {
+  #photographerGallery .lightboxContent {
+    margin: 0 20px;
+  }
+  #photographerGallery .left,
+  #photographerGallery .right {
+    font-size: 1.5rem;
+    padding: 5px;
+  }
+  #photographerGallery .close {
+    font-size: 1.5rem;
+  }
+}
+@media only screen and (max-width: 480px) {
+  #photographerGallery .lightboxContent {
+    margin: 0 10px;
+  }
+  #photographerGallery .left,
+  #photographerGallery .right {
+    font-size: 1.2rem;
+    padding: 5px;
+  }
+  #photographerGallery .close {
+    font-size: 1.2rem;
+  }
 }
 
 .imageTest {
@@ -372,30 +417,6 @@ html body {
     display: none;
   }
 }
-.galleryItem {
-  position: relative;
-  display: inline-block;
-}
-
-#photoHover {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5em;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.7);
-  display: none;
-}
-
-.galleryItem:hover #photoHover {
-  display: flex;
-}
-
 select {
   background-color: #911c1c;
   border-radius: 5px;
