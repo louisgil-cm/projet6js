@@ -191,7 +191,7 @@ function TotalLikesPhotographes() {
     }
 
     const totalLikesElement = document.getElementById("totalLikes");
-    totalLikesElement.innerText = `${totalLikes} \u00A0 ${photographer.price}€/jour`;
+    totalLikesElement.innerText = `${totalLikes}♥ \u00A0 ${photographer.price}€/jour`;
 }
 
 // fonction des evenements de la lightbox

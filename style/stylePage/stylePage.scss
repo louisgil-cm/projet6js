@@ -241,6 +241,9 @@ html {
       cursor: pointer;
       color: #901c1c;
     }
+    .close:hover{
+      background-color: red;
+    }
     
     /* Responsive adjustments */
     @media(max-width: 1115px) {
